@@ -10,6 +10,8 @@ import Signup from './Components/Registeration/SignUp';
 import { AllTiktok_Section } from './Components/TiktokProfiles/AllTiktok_Section.jsx';
 import { Uploads } from './tiktokBG/Tiktok_upload/Uploads.jsx';
 import { Tiktok_Logins } from './tiktokBG/Logins/Tiktok_Logins.jsx';
+import CommentModals from './tiktokBG/Tiktok_Homepage/CommentModal.jsx';
+import CommentsPage from './tiktokBG/Tiktok_Homepage/CommentModal.jsx';
 
 
 // Define the layout component
@@ -42,6 +44,10 @@ const routes = [
         element: <Signup />,
       },
       {
+        path: "/comments",
+        element: <CommentsPage />,
+      },
+      {
         path: "/admin",
         element: <AllTiktok_Section />,
         children: [
@@ -53,6 +59,7 @@ const routes = [
             path: "/admin/login",
             element: <Tiktok_Logins />,
           },
+          
         ],
       },
     ],

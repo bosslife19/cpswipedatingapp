@@ -572,19 +572,24 @@ list-style: none;
 
     /* sidebar tiktok */
  .sidebar {
-  width: 350px; /* Adjust width as needed */
+  width: 300px; /* Adjust width as needed */
   height: 100%;
-  background-color: #fff; /* Background color of the sidebar */
-  /* overflow-y: auto; */
+  background-color: transparent; /* Background color of the sidebar */
+  overflow-y: auto;
+  transition: 0.5s ease;
+
    /* Enable vertical scrolling */
 }
 
 .sidebar__content {
   padding: 20px;
+  transition: 0.5s ease;
+
    /* Add padding to the content */
 }
 
 .sidebar__item {
+  width: 100%;
   display: flex;
   align-items: center;
   font-size: 20px;
@@ -592,86 +597,44 @@ list-style: none;
   text-transform: capitalize;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   gap: 20px;
-  
-  padding: 30px 0px; /* Add padding to each item */
+  transition: 0.5s ease;
+  padding: 20px 0px;
+   /* Add padding to each item */
   /* Customize item styling */
 }
 .sidebar__item a{
   display: flex;
   gap: 20px;
+  cursor: pointer;
+  transition: 0.5s ease;
+
 }
 
-.sidebar__item a {
-  cursor: pointer;
+.sidebar__item:hover {
+ border-top: 1px solid #000;
+ border-bottom:1px solid #000 ;
+ color: #fff;
 }
 
 .sidebar__desktop {
   display: block;
+  transition: 0.5s ease;
+
 }
 
-.sidebar__mobile {
-  display: none;
-}
-
-.sidebar__mobile.open {
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .sidebar__desktop {
-    display: none;
-  }
-
-  .sidebar__hamburger {
-    display: block;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 999;
-  }
-
-  .sidebar__mobile {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #f0f0f0;
-    transition: all 0.3s ease;
-    z-index: 998;
-  }
-
-  .sidebar__content {
-    padding: 20px;
-  }
-
-  .sidebar__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .sidebar__item h4 {
-    margin-left: 10px;
-  }
-}
-
-
+ 
+ 
 /* Homepage background */
 .Homepage_details{
   width: 100%;
   height: 100%;
-  
+  background: #f4f5f6;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+ }
 
 .Homepage_lines{
-  padding: 30px 0px;
+  padding: 20px 0px;
 }
 
 .HomePage_Upper{
@@ -679,18 +642,25 @@ list-style: none;
   display: flex;
   /* align-items: center; */
   justify-content: space-between;
-  padding: 30px 0px;
+  padding: 15px 0px;
  }
  .tiktokProfile{
   display: flex;
   gap: 20px;
   }
-
+  .tiktokProfile img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+  }
+  .tiktokProfile div h2{
+    font-size: 15px;
+  }
  .tiktok_mingle button{
   color: rgba(255, 0, 0, 0.877);
   background: transparent;
-  padding: 12px 19px;
-  border: 1px solid rgba(255, 0, 0, 0.877);
+  padding: 7px 10px;
+  border: 2px solid rgba(255, 0, 0, 0.877);
   letter-spacing: 1px;
   font-weight: bold;
   font-family:'Tahoma',sans-serif;
@@ -702,18 +672,18 @@ list-style: none;
 }
  .main_bg video{
   display: flex;
-   width: 390px;
+   width: 250px;
   border-radius: 20px;
  }
  .Social_Bg_icons{
-  margin: 30rem 0px 0px 20px;
+  margin: 20rem 0px 0px 20px;
  }
 
  .mingle_vibes {
   display: flex;
   flex-direction: column;
   font-size: 25px;
-  margin: 20px 0px;
+  margin: 10px 0px;
   cursor: pointer;
  }
  .mingle_vibes button{
@@ -722,7 +692,7 @@ list-style: none;
  }
 
  .mingle_vibes span{
-  font-size: 15px;
+  font-size: 10px;
  }
 
  /* like button */
@@ -802,7 +772,19 @@ list-style: none;
 .footer_socialLinks a:hover:nth-of-type(3){
   color: rgb(0, 0, 0);
 }
+/* mobile sidebar */
+.sidebared{
+  display: none;
+  color: #fff;
+}
 
+.mobiledHam {
+  display: none;
+  margin-left: 15px;
+}
+.don{
+  display: none;
+}
 /* mobile screen */
 @media(max-width:1450px){
   .login-container button{
@@ -1022,6 +1004,58 @@ box-shadow: none;
   .login-container button{
     max-width: 570px;
   
+  }
+}
+@media(max-width:768px){
+  .sidebar{
+    display: none;
+  }
+  .don{
+    display: block;
+  }
+  .mobiledHam{
+    display: block;
+  }
+  .sidebared{
+    display: block;
+    color: #fff;
+  }
+  .tiktoke_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   color: #fff;
+   padding: 10px;
+  }
+  .logo_icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(28, 17, 41, 0.88);
+  }
+  .menu-bar{
+    height: 88vh;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1rem;
+    position: relative; 
+  }
+  .toggle-theme-btn{
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem; 
+  }
+  .toggle {
+    margin-left: 15px;
   }
 }
 @media(max-width:700px){

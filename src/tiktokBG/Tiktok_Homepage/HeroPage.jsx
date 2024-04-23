@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import others from "../../assets/react.svg";
 import sleeping from "../../assets/sleeping.mp4";
 import { FaCommentDots, FaHeart, FaShare } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export const HeroPage = () => {
   const [likes, setLikes] = useState(0);
@@ -66,10 +67,14 @@ export const HeroPage = () => {
                 </button>
               </div>
               <div className="mingle_vibes">
+              <Link to="/comments">
                 <button onClick={handleComment}>
+                 
                   <FaCommentDots />
                   {comments && comments}
+                 
                 </button>
+                </Link>
               </div>
               <div className="mingle_vibes">
                 <button onClick={handleShare}>
