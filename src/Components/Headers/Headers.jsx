@@ -1,12 +1,18 @@
-// Headers.js
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import { motion } from 'framer-motion';
+// import { useHistory } from 'react-router-dom'; // Import useHistory hook from React Router
 import "../../css_loaders/styles.css";
+import { Link } from 'react-router-dom';
 
 const Headers = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Function to handle scrolling
+  const navigationArray = [
+    { title: "Login", link: "/login" },
+
+  ]
+  const [isScrolled, setIsScrolled] = useState(false);
+  // const history = useHistory(); // Access the history object
+
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsScrolled(true);
@@ -16,33 +22,42 @@ const Headers = () => {
   };
 
   useEffect(() => {
-    // Add scroll event listener when component mounts
     window.addEventListener('scroll', handleScroll);
-    // Remove scroll event listener when component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // Empty dependency array ensures the effect runs only once
+  }, []);
 
-  // Variants for header animation
-  const headerVariants = {
-     visible: { opacity: 1, transition: { duration: 0.5 } },
-  };
+  // const headerVariants = {
+  //    visible: { opacity: 1, transition: { duration: 0.5 } },
+  // };
+
+  // const navigateToLoginPage = () => {
+  //   history.push('/log'); // Navigate to the '/logins' route
+  // };
 
   return (
     <motion.header 
       className={isScrolled ? 'scrolled' : ''}
-      variants={headerVariants}
+      // variants={headerVariants}
       initial="hidden"
-      animate={isScrolled ? 'visible' : 'hidden'} // Animate only when scrolled
+      animate={isScrolled ? 'visible' : 'hidden'}
     >
       <motion.div className="header_container">
         <motion.div className="logo">
-          <a href="#" className={isScrolled ? 'scrolled' : ''}>Dating</a>
+          <a href="/" className={isScrolled ? 'scrolled' : ''}>
+            <p>Dating</p>
+          </a>
         </motion.div>
-        <motion.div className="logins">
-          <i className=''></i>
-          <button className={isScrolled ? 'scrolled' : ''}>Login</button>
+        <motion.div className="">
+          {navigationArray.map(({title,link})=>(
+            <Link key={link} to={link} className='logins'>
+              <p className={isScrolled ? 'scrolled' : ''}>
+                {title}
+              </p>
+            
+            </Link>
+          ))}
         </motion.div>
       </motion.div>
     </motion.header>

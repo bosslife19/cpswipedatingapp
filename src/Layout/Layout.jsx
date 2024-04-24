@@ -2,7 +2,9 @@ import React from 'react'
 import Headers from '../Components/Headers/Headers'
  import "../css_loaders/styles.css"
 import { Homesection } from '../Components/HomePage/Homesection'
-import TestimonialSlider from './../Components/sectionpage/Category';
+ import { FlashDeals } from '../Components/sectionpage/FlashSlider';
+import FlashCard from '../Components/sectionpage/Category';
+import { Footer } from '../Components/footer/Footer';
   export const Layout = () => {
     
   return (
@@ -13,7 +15,13 @@ import TestimonialSlider from './../Components/sectionpage/Category';
         <Homesection/>
       </div>
       <div className="">
-        <TestimonialSlider/>
+       <FlashCard/>
+      </div>
+      <div className="">
+        <FlashDeals/>
+      </div>
+      <div className="">
+        <Footer/>
       </div>
         {/* <Headers backgroundImage={backgroundImage}/>
         <Routers backgroundImage={backgroundImage}/> */}
