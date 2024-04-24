@@ -28,37 +28,37 @@ export const Leftside = () => {
           </div>
            
           <div className="sidebar__item">
-            <Link to="/">
+            <Link to="/potential">
               <IoPersonAddSharp />
               <h4>Potential Matches</h4>
             </Link>
           </div>
           <div className="sidebar__item">
-            <Link to="/">
+            <Link to="/searchingleft">
               <GrUserManager />
               <h4>Search</h4>
             </Link>
           </div>
           <div className="sidebar__item">
-            <Link to="/">
+            <Link to="/peopleArea">
               <SiHomeassistantcommunitystore />
               <h4>People in Your Area</h4>
             </Link>
           </div>
           <div className="sidebar__item">
-            <Link to="/">
+            <Link to="/matched">
               <MdOutlineConnectWithoutContact />
               <h4>Matched</h4>
             </Link>
           </div>
           <div className="sidebar__item">
-            <Link to="/">
+            <Link to="/singleladies">
               <MdGirl />
               <h4>Single Women</h4>
             </Link>
           </div>
           <div className="sidebar__item">
-            <Link to="/">
+            <Link to="/singleMen">
               <GrUserManager />
               <h4>Single Men</h4>
             </Link>

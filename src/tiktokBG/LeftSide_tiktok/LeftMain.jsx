@@ -29,12 +29,13 @@ const LeftMain = () => {
         toggleTheme={toggleTheme }/>
       </Sider>
       <Layout className='mobiledHam'>
-        <Header style={{padding:0, background:colorBgContainer}}>
-          <Button type='text' className='toggle'
+        {/* <Header style={{padding:"50px", background:"transparent"}}> */}
+        
+          <Button type='text' className='toggle'style={{padding:0, background:colorBgContainer}}
           onClick={()=>setCollapsed(!collapsed)}
-          icon={collapsed ? <MenuUnfoldOutlined/> :
-        <MenuFoldOutlined/> }   />
-        </Header>
+          icon={collapsed ? <MenuUnfoldOutlined /> :
+        <MenuFoldOutlined /> }   />
+        {/* </Header> */}
       </Layout>
  </Layout>
    );

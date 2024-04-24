@@ -12,7 +12,15 @@ import { Uploads } from './tiktokBG/Tiktok_upload/Uploads.jsx';
 import { Tiktok_Logins } from './tiktokBG/Logins/Tiktok_Logins.jsx';
 import CommentModals from './tiktokBG/Tiktok_Homepage/CommentModal.jsx';
 import CommentsPage from './tiktokBG/Tiktok_Homepage/CommentModal.jsx';
-
+import ProfilePage from './tiktokBG/tiktok_Navbar/subpages/ProfilePage';
+import UploadPage from './tiktokBG/Tiktok_Homepage/subPages/UploadPage';
+import SearchPage from './tiktokBG/LeftSide_tiktok/subPages/Searchpage.jsx';
+import PeopleInYourAreaPage from './tiktokBG/LeftSide_tiktok/subPages/peopleInYourare';
+import PotentialMatchesPage from './tiktokBG/LeftSide_tiktok/subPages/Potential';
+import MatchedPage from './tiktokBG/LeftSide_tiktok/subPages/Matched.jsx';
+import SingleWomenPage from './tiktokBG/LeftSide_tiktok/subPages/Singlewomen.jsx';
+import SingleMenPage from './tiktokBG/LeftSide_tiktok/subPages/men.jsx';
+ 
 
 // Define the layout component
 const Layout = () => {
@@ -48,13 +56,42 @@ const routes = [
         element: <CommentsPage />,
       },
       {
-        path: "/admin",
+        path: "/profile",
+        element: <ProfilePage />,
+      },
+      {
+        path: "/upload",
+        element: <UploadPage />,
+      },
+      {
+        path: "/potential",
+        element: <PotentialMatchesPage />,
+      },
+      {
+        path: "/searchingleft",
+        element: <SearchPage />,
+      },
+      {
+        path: "/peopleArea",
+        element: <PeopleInYourAreaPage />,
+      },
+      {
+        path: "/matched",
+        element: <MatchedPage />,
+      },
+      {
+        path: "/singleladies",
+        element: <SingleWomenPage />,
+      },
+      {
+        path: "/singleMen",
+        element: <SingleMenPage />,
+      },
+      {
+        path: "/admin/",
         element: <AllTiktok_Section />,
         children: [
-          {
-            path: "/admin/upload",
-            element: <Uploads />,
-          },
+         
           {
             path: "/admin/login",
             element: <Tiktok_Logins />,
