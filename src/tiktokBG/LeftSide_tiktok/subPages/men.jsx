@@ -9,10 +9,10 @@ const SingleMenPage = () => {
   const singleMenProfiles = [
     { id: 1, name: 'John Smith', imageUrl: peopled, caption: 'Adventure seeker and music enthusiast' },
     { id: 2, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-    { id: 2, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-    { id: 2, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-    { id: 2, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-    { id: 2, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
+    { id: 3, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
+    { id: 4, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
+    { id: 5, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
+    { id: 6, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
 
     // Add more single men profiles as needed
   ];
