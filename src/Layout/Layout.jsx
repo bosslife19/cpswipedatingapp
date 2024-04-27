@@ -9,7 +9,7 @@ import { Footer } from '../Components/footer/Footer';
     
   return (
     <>
-    <div className=''>
+    <div className='overscroll'>
       <Headers/>
       <div className="contains">
         <Homesection/>

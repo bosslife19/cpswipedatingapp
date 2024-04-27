@@ -59,7 +59,7 @@ export const HeroPage = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <div className="Social_Bg_icons">
+            {/* <div className="Social_Bg_icons">
               <div className="mingle_vibes">
                 <button onClick={handleLike} className={liked ? 'liked' : ''}>
                   <FaHeart />
@@ -82,7 +82,7 @@ export const HeroPage = () => {
                   {shares  && shares}
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

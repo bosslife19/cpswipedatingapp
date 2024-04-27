@@ -103,13 +103,15 @@ const Banner = ({ backgroundImage }) => {
               )}
             </div>
             {!showFullForm ? (
-              <button onClick={handleGetStartedClick}>Get started</button>
+              <Link to="/login">
+                <button onClick={handleGetStartedClick}>Get started</button>
+              </Link>
             ) : (
               <button type="submit">Sign up</button>
             )}
             <div className="already_login">
-              <label style={{ fontWeight: "bold" }}>Already a member?</label>
-              <Link to="/login">Log in</Link>
+              <label style={{ fontWeight: "bold" }}>You can get started Here!</label>
+              <Link to="/admin"> Signup</Link>
             </div>
           </form>
         </div>

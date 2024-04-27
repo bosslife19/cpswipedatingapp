@@ -5,6 +5,8 @@ import life from "../../../assets/depositPhotos.webp"
 import lifes from "../../../assets/depositPhotos.webp"
 import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { Nav } from '../../tiktok_Navbar/Nav';
+import { Leftside } from '../Leftside';
 
 const PotentialMatchesPage = () => {
   const [potentialMatches, setPotentialMatches] = useState([
@@ -16,10 +18,7 @@ const PotentialMatchesPage = () => {
     { id: 6, name: 'mako lee', imageUrl: lifes, isFriend: false },
     { id: 7, name: 'mako lee', imageUrl: lifes, isFriend: false },
     { id: 8, name: 'mako lee', imageUrl: lifes, isFriend: false },
-    { id: 9, name: 'mako lee', imageUrl: lifes, isFriend: false },
-    { id: 10, name: 'mako lee', imageUrl: lifes, isFriend: false },
-    { id: 11, name: 'mako lee', imageUrl: lifes, isFriend: false },
-
+   
     // Add more potential matches as needed
   ]);
 
@@ -30,15 +29,15 @@ const PotentialMatchesPage = () => {
   };
 
   return (
-    <div className='potential'>
-       <Link to="/admin">
-        <FaArrowLeftLong/>
-      </Link>
-      <h1>Potential Matches</h1>
+    <>
+      <Nav/>
+      <div className="display_sideways">
+        <Leftside/>
+       <div className='potential'>
       <div className="potential_contains">
        {potentialMatches.map(match => (
         <div key={match.id} className="match">
-          <p>Matched</p>
+        
           <img src={match.imageUrl} alt={match.name} />
           <div className="other_potential">
           <h3>{match.name}</h3>
@@ -49,7 +48,10 @@ const PotentialMatchesPage = () => {
         </div>
       ))}
       </div>
-    </div>
+      </div>
+      </div>
+    
+ y    </>
   );
 };
 

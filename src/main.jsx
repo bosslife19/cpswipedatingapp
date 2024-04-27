@@ -3,15 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
-import Headers from './Components/Headers/Headers.jsx';
-import { Footer } from './Components/footer/Footer.jsx';
 import Login from './Components/Registeration/Login';
-import Signup from './Components/Registeration/SignUp';
 import { AllTiktok_Section } from './Components/TiktokProfiles/AllTiktok_Section.jsx';
-import { Uploads } from './tiktokBG/Tiktok_upload/Uploads.jsx';
 import { Tiktok_Logins } from './tiktokBG/Logins/Tiktok_Logins.jsx';
-import CommentModals from './tiktokBG/Tiktok_Homepage/CommentModal.jsx';
-import CommentsPage from './tiktokBG/Tiktok_Homepage/CommentModal.jsx';
 import ProfilePage from './tiktokBG/tiktok_Navbar/subpages/ProfilePage';
 import UploadPage from './tiktokBG/Tiktok_Homepage/subPages/UploadPage';
 import SearchPage from './tiktokBG/LeftSide_tiktok/subPages/Searchpage.jsx';
@@ -20,6 +14,8 @@ import PotentialMatchesPage from './tiktokBG/LeftSide_tiktok/subPages/Potential'
 import MatchedPage from './tiktokBG/LeftSide_tiktok/subPages/Matched.jsx';
 import SingleWomenPage from './tiktokBG/LeftSide_tiktok/subPages/Singlewomen.jsx';
 import SingleMenPage from './tiktokBG/LeftSide_tiktok/subPages/men.jsx';
+ import SignUp from './Components/Registeration/SignUp.jsx';
+ import Appssss from './tiktokBG/Tiktok_Homepage/SideberItems.jsx';
  
 
 // Define the layout component
@@ -47,14 +43,8 @@ const routes = [
         path: "/login",
         element: <Login />,
       },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
-      {
-        path: "/comments",
-        element: <CommentsPage />,
-      },
+      
+      
       {
         path: "/profile",
         element: <ProfilePage />,
@@ -70,6 +60,14 @@ const routes = [
       {
         path: "/searchingleft",
         element: <SearchPage />,
+      },
+      {
+        path: "/sidebars",
+        element: <Appssss />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
       {
         path: "/peopleArea",
