@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+/backend
 /backend/.phpunit.cache
 /backend/node_modules
 /backend/public/build
