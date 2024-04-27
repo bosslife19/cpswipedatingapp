@@ -4,26 +4,24 @@ import { Link } from 'react-router-dom';
 import peopled from "../../../assets/pack.jpg"
 import peoples from "../../../assets/depositPhotos.webp"
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { Leftside } from '../Leftside';
+import { Nav } from '../../tiktok_Navbar/Nav';
 
 const SingleMenPage = () => {
   const singleMenProfiles = [
     { id: 1, name: 'John Smith', imageUrl: peopled, caption: 'Adventure seeker and music enthusiast' },
     { id: 2, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
     { id: 3, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-    { id: 4, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-    { id: 5, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-    { id: 6, name: 'Michael Brown', imageUrl: peoples, caption: 'Passionate about sports and technology' },
-
+    
     // Add more single men profiles as needed
   ];
 
   return (
+    <>
+    <Nav/>
+    <div className="display_sideways">
+       <Leftside/>
     <div className="single-men-page">
-      <div className="linkarrow">
-       <Link to="/admin">
-        <FaArrowLeftLong/>
-      </Link>
-       </div>
       <h1>Single Men</h1>
       <div className="profilemen">
         {singleMenProfiles.map(profile => (
@@ -37,6 +35,8 @@ const SingleMenPage = () => {
         ))}
       </div>
     </div>
+    </div>
+    </>
   );
 };
 

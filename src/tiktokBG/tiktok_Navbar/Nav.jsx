@@ -13,12 +13,12 @@ export const Nav = () => {
             <div className="">
                <h2> Dating</h2>
             </div>
-            {/* <div className="searchform">
+            <div className="searchform">
                 <div className="icons">
                 <IoIosSearch />
                 </div>
                 <input type="search" placeholder='Search'/>
-            </div> */}
+            </div>
             <div className="Uploads_logins">
               <a href="/upload">
                 <div className='upload_vid'>

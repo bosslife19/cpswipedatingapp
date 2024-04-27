@@ -21,13 +21,13 @@ import { MdGirl, MdOutlineConnectWithoutContact } from "react-icons/md";
 const Appssss = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: <FaHome/> ,link: "/"},
-    { title: "Inbox", src: <IoPersonAddSharp />,link: "/" },
-    { title: "Accounts", src: <GrUserManager/>, gap: true ,link: "/"},
-    { title: "Schedule ", src: <SiHomeassistantcommunitystore/> ,link: "/"},
-    { title: "Search", src: <MdOutlineConnectWithoutContact />,link: "/"},
-    { title: "Analytics", src:<MdGirl/> ,link: "/"},
-    { title: "Files ", src:<GrUserManager />, gap: true ,link: "/"},
+    { title: "Dashboard", src: <FaHome/> ,link: "/admin"},
+    { title: "potential matches", src: <IoPersonAddSharp />,link: "/potential" },
+    { title: "search", src: <GrUserManager/>, gap: true ,link: "/searchingleft"},
+    { title: "People in Your Area ", src: <SiHomeassistantcommunitystore/> ,link: "/peopleArea"},
+    { title: "Matched", src: <MdOutlineConnectWithoutContact />,link: "/matched"},
+    { title: "Single Women", src:<MdGirl/> ,link: "/singleladies"},
+    { title: " Single Men ", src:<GrUserManager />, gap: true ,link: "/singleMen"},
    ];
 
   return (
@@ -43,7 +43,7 @@ const Appssss = () => {
             src={logo}
             className={`logo ${open && "rotate-360"}`}
           />
-          <h1 className={`title ${!open && "scale-0"}`}>Dating Board</h1>
+          <h1 className={`title ${!open && "scale-0"}`}> Board</h1>
         </div>
         <ul>
           {Menus.map((Menu, index) => (
@@ -53,11 +53,9 @@ const Appssss = () => {
                 index === 0 && "active"
               } `}
             >
-                {/* <i className={`${}`}></i> */}
-              <a href={Menu.link}>
+               <a href={Menu.link}>
                 <i>{Menu.src}</i>
-              {/* <img src={Menu.src} /> */}
-              <span className={`${!open && "hidden"}`}>{Menu.title}</span>
+               <span className={`${!open && "hidden"}`}>{Menu.title}</span>
               </a>
             </li>
            ))}

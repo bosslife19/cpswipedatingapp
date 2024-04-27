@@ -51,7 +51,7 @@ const PotentialMatchesPage = () => {
       </div>
       </div>
     
- y    </>
+   </>
   );
 };
 

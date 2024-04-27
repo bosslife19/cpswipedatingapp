@@ -4,26 +4,24 @@ import { Link } from 'react-router-dom';
 import peopled from "../../../assets/pack.jpg"
 import peoples from "../../../assets/depositPhotos.webp"
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { Nav } from '../../tiktok_Navbar/Nav';
+import { Leftside } from '../Leftside';
 
 const SingleWomenPage = () => {
   const singleWomenProfiles = [
     { id: 1, name: 'Sarah Johnson', imageUrl: peopled, caption: 'Nature lover and fitness enthusiast' },
     { id: 2, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
     { id: 3, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
-    { id: 4, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
-    { id: 5, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
-    { id: 6, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
-
+ 
     // Add more single women profiles as needed
   ];
 
   return (
+    <>
+    <Nav/>
+    <div className="display_sideways">
+       <Leftside/>
     <div className="single-women-page">
-       <div className="linkarrow">
-       <Link to="/admin">
-        <FaArrowLeftLong/>
-      </Link>
-       </div>
       <h1>Single Women</h1>
       <div className="profiles_ladies">
         {singleWomenProfiles.map(profile => (
@@ -37,6 +35,8 @@ const SingleWomenPage = () => {
         ))}
       </div>
     </div>
+    </div>
+    </>
   );
 };
 

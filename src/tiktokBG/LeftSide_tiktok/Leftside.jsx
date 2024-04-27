@@ -5,8 +5,7 @@ import { IoPersonAddSharp } from 'react-icons/io5';
 import { MdError, MdGirl, MdMarkEmailUnread, MdOutlineConnectWithoutContact } from 'react-icons/md';
 import { SiAdguard, SiHomeassistantcommunitystore } from 'react-icons/si';
 import { Link } from 'react-router-dom';
-import LeftMain from './LeftMain';
-import Appssss from '../Tiktok_Homepage/SideberItems';
+ import Appssss from '../Tiktok_Homepage/SideberItems';
  
 export const Leftside = () => {
 
