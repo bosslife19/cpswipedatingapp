@@ -4,18 +4,15 @@ import logoImg from "../../assets/pack.jpg"
 import { BiPlus } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 export const Nav = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleToggle = () => {
-      setIsOpen(!isOpen);
-    };
+ 
+  
   return (
     <>
        <div className="tiktokHeader">
         <div className="tiktok_container">
-            <div className="">
+            <Link to="/" className="NavLink">
                <h2> Dating</h2>
-            </div>
+            </Link>
             <div className="searchform">
                 <div className="icons">
                 <IoIosSearch />
@@ -29,29 +26,12 @@ export const Nav = () => {
                     uploads
                  </div>
                  </a>
-                <div className="dropdown">
-              <div className="tiktokProfile" onClick={handleToggle}>
+               <div className="tiktokProfile" >
+             <Link to="/profile">
              <img src={logoImg} alt="" />
+             </Link>
             </div>
-              {isOpen && (
-               <div className="dropdown-content">
-                <Link to="/profile">
-                Profile
-                </Link>
-                <Link to="">
-                Login
-                </Link>
-                <Link to="">
-                Logout
-                </Link>
- 
-
- 
-               
-            </div>
-           )}
-        </div>
-            </div>
+             </div>
         </div>
         </div> 
     </>

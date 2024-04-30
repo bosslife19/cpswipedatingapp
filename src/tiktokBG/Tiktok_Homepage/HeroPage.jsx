@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import others from "../../assets/react.svg";
-import sleeping from "../../assets/sleeping.mp4";
-import { FaCommentDots, FaHeart, FaShare } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+// import sleeping from "../../assets/sleeping.mp4";
+import port from "../../assets/pack.jpg"
+ import { Link } from 'react-router-dom';
 
 export const HeroPage = () => {
   const [likes, setLikes] = useState(0);
@@ -40,11 +40,43 @@ export const HeroPage = () => {
     <>
       <div className="Homepage_details">
         <div className="Homepage_lines">
+          <div className="">
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <Link to={`/profile-page/:id`}>
+              <img src={others} alt="" />
+              </Link>
+              <div className="">
+              <Link to={`/profile-page/:id`}
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>subscribe</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
           <div className="HomePage_Upper">
             <div className='tiktokProfile'>
               <img src={others} alt="" />
               <div className="">
-                <h2>your name</h2>
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
                 <span>your caption</span>
               </div>
             </div>
@@ -54,36 +86,302 @@ export const HeroPage = () => {
           </div>
           <div className="main_bg">
             <div className="video-container">
-              <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
                 <source src={sleeping} type="video/mp4" />
                 Your browser does not support the video tag.
-              </video>
+              </video> */}
+              <img src={port} alt="" />
             </div>
-            <div className="Social_Bg_icons">
-              <div className="mingle_vibes">
-                <button onClick={handleLike} className={liked ? 'liked' : ''}>
-                  <FaHeart />
-                  {liked && likes}
-                </button>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
               </div>
-              <div className="mingle_vibes">
-              <Link to="/comments">
-                <button onClick={handleComment}>
-                 
-                  <FaCommentDots />
-                  {comments && comments}
-                 
-                </button>
-                </Link>
-              </div>
-              <div className="mingle_vibes">
-                <button onClick={handleShare}>
-                  <FaShare />
-                  {shares  && shares}
-                </button>
-              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
             </div>
           </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          <div className="HomePage_Upper">
+            <div className='tiktokProfile'>
+              <img src={others} alt="" />
+              <div className="">
+              <Link 
+              
+              >
+              <h2>your name</h2>
+             </Link>
+                <span>your caption</span>
+              </div>
+            </div>
+            <div className="tiktok_mingle">
+              <button>mingle</button>
+            </div>
+          </div>
+          <div className="main_bg">
+            <div className="video-container">
+              {/* <video ref={videoRef} controls={false} autoPlay loop onDoubleClick={handleDoubleClick} onEnded={handleVideoEnded}>
+                <source src={sleeping} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video> */}
+              <img src={port} alt="" />
+            </div>
+              
+          </div>
+          </div>
+          
         </div>
       </div>
     </>

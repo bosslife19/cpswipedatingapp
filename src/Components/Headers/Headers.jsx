@@ -7,26 +7,26 @@ import { Link } from 'react-router-dom';
 const Headers = () => {
 
   const navigationArray = [
-    { title: "Login", link: "/login" },
+    { title: "Login", link: "/admin" },
 
   ]
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   // const history = useHistory(); // Access the history object
 
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
+  // const handleScroll = () => {
+  //   if (window.scrollY > 0) {
+  //     setIsScrolled(true);
+  //   } else {
+  //     setIsScrolled(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   // const headerVariants = {
   //    visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -37,22 +37,27 @@ const Headers = () => {
   // };
 
   return (
-    <motion.header 
-      className={isScrolled ? 'scrolled' : ''}
+    <>
+     <motion.header 
+      // className={isScrolled ? 'scrolled' : ''}
       // variants={headerVariants}
-      initial="hidden"
-      animate={isScrolled ? 'visible' : 'hidden'}
+      // initial="hidden"
+      // animate={isScrolled ? 'visible' : 'hidden'}
     >
       <motion.div className="header_container">
         <motion.div className="logo">
-          <a href="/" className={isScrolled ? 'scrolled' : ''}>
+          <a href="/" 
+          // className={isScrolled ? 'scrolled' : ''}
+          >
             <p>Dating</p>
           </a>
         </motion.div>
         <motion.div className="">
           {navigationArray.map(({title,link})=>(
             <Link key={link} to={link} className='logins'>
-              <p className={isScrolled ? 'scrolled' : ''}>
+              <p
+              //  className={isScrolled ? 'scrolled' : ''}
+              >
                 {title}
               </p>
             
@@ -61,6 +66,8 @@ const Headers = () => {
         </motion.div>
       </motion.div>
     </motion.header>
+    </>
+   
   );
 };
 

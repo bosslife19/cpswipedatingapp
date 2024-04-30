@@ -4,6 +4,8 @@ import peopled from "../../../assets/pack.jpg"
 import peoples from "../../../assets/depositPhotos.webp"
 import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { Leftside } from '../Leftside';
+import { Nav } from '../../tiktok_Navbar/Nav';
 
 
 const PeopleInYourAreaPage = () => {
@@ -14,15 +16,19 @@ const PeopleInYourAreaPage = () => {
   ];
 
   return (
+    <>
+    <Nav/>
+    <div className="display_sideways">
+       <Leftside/>
     <div className="people-in-your-area-page">
-      <Link to="/admin">
-        <FaArrowLeftLong/>
-      </Link>
-      <h1>People in Your Area</h1>
+      
+      <h1>connect now</h1>
       <div className="people-grid">
         {people.map(person => (
           <div key={person.id} className="person-card">
+            <Link to={`/profile-page/:id`}>
             <img src={person.imageUrl} alt={person.name} />
+            </Link>
            <div className="captions">
            <h3>{person.name}</h3>
             <p>{person.caption}</p>
@@ -31,6 +37,8 @@ const PeopleInYourAreaPage = () => {
         ))}
       </div>
     </div>
+    </div>
+    </>
   );
 };
 

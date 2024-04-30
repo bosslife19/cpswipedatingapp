@@ -4,6 +4,8 @@ import peopled from "../../../assets/pack.jpg"
 import peoples from "../../../assets/depositPhotos.webp"
 import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { Nav } from '../../tiktok_Navbar/Nav';
+import { Leftside } from '../Leftside';
 const MatchedPage = () => {
   const matchedUsers = [
     { id: 1, name: 'John Doe', imageUrl: peopled, matchReason: 'Similar interests in hiking and photography' },
@@ -22,15 +24,19 @@ const MatchedPage = () => {
   };
 
   return (
+    <>
+    <Nav/>
+    <div className="display_sideways">
+       <Leftside/>
     <div className="matched-page">
-       <Link to="/admin">
-        <FaArrowLeftLong/>
-      </Link>
+       
       <h1>Matched</h1>
       <div className="matched-users">
         {matchedUsers.map(user => (
           <div key={user.id} className="user-card">
+             <Link to={`/profile-page/:id`}>
             <img src={user.imageUrl} alt={user.name} />
+            </Link>
             <h3>{user.name}</h3>
             <p>{user.matchReason}</p>
             <div className="action-buttons">
@@ -41,6 +47,8 @@ const MatchedPage = () => {
         ))}
       </div>
     </div>
+    </div>
+    </>
   );
 };
 

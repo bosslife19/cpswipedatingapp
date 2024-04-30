@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
- 
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   // State variables to store user inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,6 +23,8 @@ const Login = () => {
     // Here you can perform validation or send the login request
     console.log('Email:', email);
     console.log('Password:', password);
+    // Simulate successful login
+    onLogin();
     // Reset the form fields after submission
     setEmail('');
     setPassword('');
@@ -63,12 +64,17 @@ const Login = () => {
             required
           />
         </div>
-        <Link to="/admin">
+        {/* <Link to="/admin"> */}
         <button type="submit">Login</button>
-        </Link>
+        {/* </Link> */}
       </form>
+      <div className="signupbar">
+              <label style={{ fontWeight: "bold" }}>Already a member? <Link to="/signup">signup</Link></label>
+     </div>
       </div>
+      
     </div>
+   
     </>
   );
 };
