@@ -34,7 +34,9 @@ const MatchedPage = () => {
       <div className="matched-users">
         {matchedUsers.map(user => (
           <div key={user.id} className="user-card">
+             <Link to={`/profile-page/:id`}>
             <img src={user.imageUrl} alt={user.name} />
+            </Link>
             <h3>{user.name}</h3>
             <p>{user.matchReason}</p>
             <div className="action-buttons">

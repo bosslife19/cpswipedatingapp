@@ -10,8 +10,7 @@ import logo from  "../../Routers/assets/logo.png";
 // import Folder   from  "../../Routers/assets/Folder.png";
 // import Setting   from  "../../Routers/assets/Setting.png";
  
-import "../../css_loaders/comment.css"
-// import { Link } from "lucide-react";
+ // import { Link } from "lucide-react";
 import { FaHome } from "react-icons/fa";
 import { IoPersonAddSharp } from "react-icons/io5";
 import { GrUserManager } from "react-icons/gr";
@@ -50,7 +49,7 @@ const Appssss = () => {
             <li
               key={index}
               className={`menu-item ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "active"
+                index === 0 && ""
               } `}
             >
                <a href={Menu.link}>

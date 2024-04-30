@@ -18,7 +18,13 @@ const PotentialMatchesPage = () => {
     { id: 6, name: 'mako lee', imageUrl: lifes, isFriend: false },
     { id: 7, name: 'mako lee', imageUrl: lifes, isFriend: false },
     { id: 8, name: 'mako lee', imageUrl: lifes, isFriend: false },
-   
+    { id: 9, name: 'mako lee', imageUrl: lifes, isFriend: false },
+    { id: 10, name: 'mako lee', imageUrl: lifes, isFriend: false },
+    { id: 11, name: 'mako lee', imageUrl: lifes, isFriend: false },
+    { id: 12, name: 'mako lee', imageUrl: lifes, isFriend: false },
+    { id: 13, name: 'mako lee', imageUrl: lifes, isFriend: false },
+    { id: 14, name: 'mako lee', imageUrl: lifes, isFriend: false },
+
     // Add more potential matches as needed
   ]);
 
@@ -37,8 +43,9 @@ const PotentialMatchesPage = () => {
       <div className="potential_contains">
        {potentialMatches.map(match => (
         <div key={match.id} className="match">
-        
+         <Link to={`/profile-page/:id`}>
           <img src={match.imageUrl} alt={match.name} />
+          </Link>
           <div className="other_potential">
           <h3>{match.name}</h3>
           <button onClick={() => handleFriendAction(match.id)}>

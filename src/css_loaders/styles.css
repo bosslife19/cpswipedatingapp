@@ -36,6 +36,7 @@
      color: white;
     z-index: 999; 
   }
+ 
  /* Styles for the normal state */
 header {
   /* position: sticky; */
@@ -44,6 +45,8 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
+    padding-left: 5px;
+    padding-right: 5px;
      z-index: 1000;
     transition: background-color 0.3s ease-in-out;
   }
@@ -148,8 +151,8 @@ list-style: none;
   }
   .signup_header{
     width: 100%;
-    height: 100vh;
-    position: fixed;
+    height: 100%;
+    /* position: fixed; */
     background: #918585;
     /* overflow-x: hidden; */
   }
@@ -422,7 +425,7 @@ list-style: none;
   .form-groups input{
     width: 450px;
     height: 55px;
-    padding-left: 10px;
+    padding-left: 14px;
     border-radius: 10px;
     border: none;
     outline: none;
@@ -726,40 +729,69 @@ list-style: none;
   flex-direction: column;
   /* overflow: hidden; */
 }
-
-.Homepage_details{
-  /* width: 100%; */
-  /* height: 100%; */
-  /* background: #f4f5f6; */
-  /* display: flex; */
-  justify-content: center;
- }
-.Homepage_lines{
-width: 100%;
-height: 100vh;
-/* overflow-y: auto; */
-scrollbar-width: none;
-   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  background: #eeebeb;
-  /* padding: 80px 0px; */
-  /* padding: 0px; */
-  /* margin: 0  300px; */
+.Homepage_details {
+  width: 100%;
+  padding: 50px;
+  overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
 }
 
-.HomePage_Upper{
-  /* width: 100%; */
+.Homepage_lines {
   display: flex;
-  /* align-items: center; */
-  margin-top: 70px;
-  justify-content: space-between;
-   width: 300px;
+  justify-content: center;
   align-items: center;
- }
- .tiktokProfile{
+  flex-wrap: wrap;
+}
+
+.HomePage_Upper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.tiktokProfile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.tiktokProfile h2 {
+  margin: 0;
+}
+
+.tiktok_mingle {
+  margin-left: auto;
+}
+
+.main_bg {
+  width: 100%;
+  
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 36.25%;
+  
+}
+
+.video-container img {
+  /* position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; */
+  /* width: 120px; */
+  height: 200px;
+  object-fit: cover;
+}
+
+.tiktokProfile{
   display: flex;
   gap: 20px;
   }
@@ -775,77 +807,18 @@ scrollbar-width: none;
  .tiktok_mingle button{
   color: rgba(255, 0, 0, 0.877);
   background: transparent;
-  padding: 7px 10px;
+  padding: 6px 8px;
   border: 2px solid rgba(255, 0, 0, 0.877);
   letter-spacing: 1px;
   font-weight: bold;
+  border-radius: 5px;
   font-family:'Tahoma',sans-serif;
   cursor: pointer;
  }
-.main_bg{
-  /* margin-left: -30px; */
-  /* display: flex; */
-padding: 10px;
-}
-.video-container {
-  position: relative;
-  width: 100px;
-  height: 100%;
-}
- .main_bg video{
-  /* display: flex; */
-   width: 250px;
-  border-radius: 20px;
+ .tiktok_mingle button:hover{
+  background: rgba(236, 62, 9, 0.877);
+  color: #fff;
  }
- .Social_Bg_icons{
-  margin: 20rem 0px 0px 20px;
- }
-
- .mingle_vibes {
-  display: flex;
-  flex-direction: column;
-  font-size: 25px;
-  margin: 10px 0px;
-  cursor: pointer;
- }
- .mingle_vibes button{
-  border: none;
-  background: none;
- }
-
- .mingle_vibes span{
-  font-size: 10px;
- }
-
- /* like button */
- .mingle_vibes button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.mingle_vibes button:focus {
-  outline: none;
-}
-
-.liked {
-  color: red;
-}
-
-  
- 
-.video-overlay {
-  /* position: absolute; */
-  /* top: 50%; */
-  /* left: 50%; */
-  transform: translate(-50%, -50%);
-  font-size: 48px;
-  color: white;
-  cursor: pointer;
-}
-
-
 /* footer  */
 .Footer{
   width: 100%;
@@ -909,7 +882,11 @@ padding: 10px;
 /* profile page */
 .profile-page{
   width: 100%;
-  /* height: 100vh; */
+  padding: 15px;
+  overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
   background: #f4f5f6;
 }
 .profile_contains{
@@ -917,7 +894,7 @@ padding: 10px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  /* padding: 30px; */
  }
 .profile-header{
   /* padding: 5px 5px 5px 5px; */
@@ -926,20 +903,21 @@ padding: 10px;
  justify-content: center;
  align-items: center;
  flex-direction: column;
+ padding: 10px 0;
 }
 .profile-header img{
-  margin-top: 40px;
- width: 250px;
+  /* margin-top: 10px; */
+ width: 100px;
  background: #d1cece;
  padding: 9px;
- height: 260px;
+ height: 100px;
 object-fit: cover;
  border-radius: 50%;
 }
 .profile-header h1,
 .profile-header p{
-  padding: 13px;
-  font-size: 25px;
+  /* padding: 13px; */
+  font-size: 15px;
   font-family: "Tahoma",sans-serif;
 }
 .filters{
@@ -948,9 +926,24 @@ object-fit: cover;
  gap: 20px; 
  padding: 25px;
 }
-.filters select,
-.filters button{
-  padding: 10px;
+.filters select{
+  padding: 10px 13px;
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+  background: rebeccapurple;
+  color: #fff;
+  font-weight: bold;
+  font-family: "Arial",sans-serif;
+  cursor: pointer;
+ }
+ .filters select option{
+  background: beige;
+  cursor: pointer;
+ }
+
+ .filters button{
+  padding: 12px 13px;
   border: none;
   font-size: 15px;
   border-radius: 5px;
@@ -1008,11 +1001,21 @@ object-fit: cover;
   font-size: 40px;
   font-family: "Monaco",monospace;
  }
+ .upload_contains{
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  align-items: center;
+  /* gap: 100px; */
+  justify-content: center;
+  }
 
  .upload-container{
   padding: 50px;
-  margin: 100px 0px;
-  height: 150px;
+  /* margin: 100px 0px; */
+  height: 100%;
+  /* margin-top: 50px; */
    border: 4px solid rgb(187, 14, 14);
  }
  .drop-area{
@@ -1022,131 +1025,175 @@ object-fit: cover;
  .drop-area input[type="file"]{
   padding: 20px;
  }
- .upload-container button{
+
+ .upload-details-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow-y: auto; */
+  overflow: hidden;
+  height: calc(100vh - 64px); /* Adjust 64px according to your Navbar height */
+  width: 100%;
+ }
+ .display_flex{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: 40px;
+  background: #f4f5f6;
+  height: 68vh;
+  padding: 20px;
+  border-radius: 15px;
+ }
+ .display_flex form{
+  width: 100%;
+ 
+ }
+ .display_flex button{
   background: rebeccapurple;
   padding: 10px;
   border-radius: 5px;
   border: none;
+  margin-top: 20px;
   color: #fff;
-  font-family: "Verdana",sans-serif;
+   font-family: "Verdana",sans-serif;
  }
- .selected-files{
-  
-  padding: 30px;
-  border-radius: 10px;
+ 
+ .display_flex{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+ 
  }
- .file{
-  margin: 20px 0px;
-  border: 2px solid rebeccapurple;
+ .display_flex form div{
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0px;
+ }
+ .display_flex form h1{
+  font-size: 40px;
+  text-transform: capitalize;
+  font-family: "Monaco",monospace;
+  padding-bottom: 40px;
+
+ }
+ .display_flex form input[type="text"]{
+  width: 70%;
+  height: 70px;
   border-radius: 5px;
-  padding: 10px;
-  opacity: 0.8;
+  border: none;
+  outline: none;
+  padding-left: 10px;
  }
- .file span{
-  color: #1d9444;
+ .display_flex form input[type="date"]{
+  width: 20%;
+  height: 40px;
+  font-family: "works",sans-serif;
+  border-radius: 5px;
+  outline: none;
+ }
+  .display_flex form button{
+  padding: 15px 70px;
   font-size: 20px;
+  font-family: "Gill Sana",sans-serif;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+  border: none;
+  background: rebeccapurple;
+ }
+ .display_flex form button:hover{
+  background: #525252;
  }
 
- /* potential */
- .potents{
+ .file{
+  width: 500px;
+  height: 250px;
+  margin-top: 100px;
+  padding:10px;
+  background: #525252;
+  border-radius: 10px;
+ }
+ 
+ .file img,
+ .file video{
   width: 100%;
   height: 100%;
-  }
+   font-size: 20px;
+  border-radius: 5px;
+
+ }
+/* upload details */
+ .upload_img img{
+  width: 130px;
+ }
+ /* potential */
  .potential{
   width: 100%;
-  height: 100vh;
+  padding: 20px 0px;
   overflow-y: auto;
-  scrollbar-width: none;
+  height: 100vh;
+  scrollbar-width:none;
   scroll-behavior: smooth;
-  padding: 60px 0px;
-    display: flex;
-  justify-content: center;
- }
- .potential h1{
-  font-size: 20px;
-  }
- .potential a{
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 20px;
-  font-size: 30px;
  }
  .potential_contains{
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-  /* margin-top: 30px; */
-  display: grid;
-  align-items: center;
-  /* grid-template-columns: repeat(4,1fr); */
-  /* border: 1px solid #000; */
-  border-radius: 20px;
-   }
- .match{
-  padding: 30px;
   display: flex;
+  justify-content: start;
   align-items: center;
-  
+  flex-wrap: wrap;
  }
- .match p{
-  position: absolute;
-  top: 145px;
-  margin-left: 220px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #1d9444;
-  border: 1px solid #1d9444;
-  padding: 2px;
-  border-radius: 10px;
-    font-family: "Geogia",serif;
-
+ .match{
+  padding: 0px 20px 40px 20px;
+  /* display: grid;
+  grid-template-columns: repeat(5,1fr); */
  }
  .match img{
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
+  width: 215px;
  }
  .other_potential{
-  padding: 20px;
-  transition: 0.5s ease;
-
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d1cece;
+  border-radius: 10px;
  }
  .other_potential h3{
-  font-size: 18px;
-  font-weight: 200;
-  font-family: "Tahoma",sans-serif;
+  font-weight: normal;
+  font-family: "Works",sans-serif;
  }
  .other_potential button{
-  padding: 8px;
-  border-radius: 5px;
-  margin-top: 7px;
-  color: #fff;
-   font-size: 10px;
-   transition: 0.5s ease;
+  padding:6px 10px;
   background: rebeccapurple;
   border: none;
-  font-family: "Trebuchet MS",sans-serif;
-
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: "works,",sans-serif;
  }
 /* search-page */
 .search-page{
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 40px;
+  padding: 50px;
+  overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
+}
+.search-page h1{
+  text-align: center;
+  padding: 10px;
 }
 .search-page a{
-  position: absolute;
+  /* position: absolute;
   top: 10px;
-  left: 20px;
-  padding: 10px 10px 3px 10px;
-  font-size: 32px;
-  background: rebeccapurple;
-  border-radius: 50%;
+  left: 20px; */
+  padding: 10px;
+  font-size: 1.3rem;
+  background: #d1cece;
+  border-radius: 5px;
   color: #fff;
 }
 .searching_contains{
@@ -1154,8 +1201,8 @@ object-fit: cover;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 100px 0px;
-}
+  flex-wrap: wrap;
+ }
 .searching_contains form{
   padding: 20px 10px 20px 20px;
   background: #d1cece;
@@ -1172,17 +1219,17 @@ object-fit: cover;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
  }
-.searching_contains button{
+.searching_contains button[type="submit"]{
   padding: 20px;
   border: none;
-  background: #d1cece;
+  background: transparent;
+  border-radius: 4px;
 }
 .search-page h1{
-  font-size: 55px;
-}
-
-.search-results{
-  padding: 30px;
+  font-weight: normal;
+  font-size: 2.4rem;
+  font-family:'Courier New', Courier, monospace;
+  /* font-size: 55px; */
 }
 
 .search-result{
@@ -1192,33 +1239,41 @@ object-fit: cover;
   gap: 40px;
   border: 1px solid #000;
   padding: 20px;
+  margin: 20px;
   border-radius: 10px;
 }
-
+ 
+.search-result button{
+  padding: 10px 16px;
+  border: none;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  font-family:Arial, Helvetica, sans-serif;
+  background: rebeccapurple;
+  border-radius: 4px;
+}
 /* people-in-your-area-page */
 .people-in-your-area-page{
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0;
+  padding: 50px;
+  overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
 }
-.people-in-your-area-page a{
-  position: absolute;
-  left: 20px;
-  background: #000;
-  font-size: 34px;
-  padding: 12px 12px 3px 10px;
-  border-radius: 50%;
-   top: 20px;
+.people-in-your-area-page h1{
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: "Poppins",sans-serif;
+  text-transform: capitalize;
 }
 .people-grid{
-display: grid;
-grid-template-columns: repeat(2,1fr);
-padding: 20px;
-gap: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .person-card{
   padding: 30px;
@@ -1227,7 +1282,8 @@ gap: 40px;
   border-radius: 10px;
   justify-content: center;
 }
-.person-card img{
+.person-card a img{
+
   width: 100px;
 }
 .captions{
@@ -1249,29 +1305,34 @@ gap: 40px;
 /* matched-page */
 .matched-page{
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 40px;
+  padding: 50px;
+  overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
+}
+.matched-page h1{
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .matched-users{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  padding: 40px;
-  gap: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .user-card{
   width: 280px;
-  padding: 20px 0px 50px 20px; 
+  padding: 20px; 
   background: #eeebeb;
   border-radius: 10px;
   box-shadow: none;
 }
-.user-card img{
-  width: 250px;
+.user-card a img{
+  width: 100%;
+  padding: 5px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 
@@ -1282,6 +1343,7 @@ gap: 40px;
   font-family: "poppins",sans-serif;
 }
 .user-card p{
+  /* width: 300px; */
   font-size: 16px;
   padding: 3px;
   color: #1c1c21;
@@ -1309,47 +1371,30 @@ gap: 40px;
 
 }
 
-.matched-page a{
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 5px;
-  padding: 13px 23px;
-  color: #fff;
-  margin: 10px;
-  background: rebeccapurple;
-}
+ 
 
 /* single-women-page */
 .single-women-page{
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 40px;
+  padding: 50px;
+   overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
 }
-.linkarrow a{
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 5px;
-  padding: 13px 23px;
-  color: #fff;
-  margin: 10px;
-  background: rebeccapurple;
-}
+ 
 .single-women-page h1{
-  padding: 10px;
+  padding-bottom: 14px;
+  text-align: center;
   font-family: "Trebuchet MS",sans-serif;
-  font-size: 50px;
+  /* font-size: 50px; */
 }
 .profiles_ladies{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  padding: 40px;
-  gap: 70px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .profile-card{
@@ -1378,19 +1423,22 @@ gap: 40px;
 /* single men */
 .single-men-page{
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 40px;
+  padding: 20px;
+   overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
 }
-
+.single-men-page h1{
+  text-align: center;
+  padding-bottom: 14px;
+}
 .profilemen{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  padding: 40px;
-  gap: 70px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .profile-card img {
@@ -1405,12 +1453,10 @@ gap: 40px;
 
 .profile-card p{
   font-family: "Poppins",sans-serif;
-
 }
 /* sideways */
 .display_sideways{
-  /* width: 100%; */
-  /* height: 100%; */
+
   display: flex;
 }
 
@@ -1432,11 +1478,16 @@ gap: 40px;
 .sidebarse {
   width: 100%;
   background-color: rebeccapurple; 
-  height: 100vh;
-  padding: 20px 2px;
-  position:relative;
+  scrollbar-width:1px;
+    scroll-padding-top: 40px;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 20px;
+     height: 650px;
+     position: relative;
   transition: width 0.3s ease;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .toggle-icon {
@@ -1455,6 +1506,7 @@ gap: 40px;
   display: flex;
   gap: 24px;
   align-items: center;
+  margin-bottom: 22px;
 }
 
 .logo {
@@ -1474,7 +1526,7 @@ gap: 40px;
   display: flex;
   align-items: start;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 12px;
   border-radius: 8px;
   cursor: pointer;
   transition: margin-top 0.3s ease;
@@ -1520,16 +1572,107 @@ gap: 40px;
 }
 
 .closed {
-  width: 50px;
+  width: 40px;
 }  
-
+/*  profile_details*/
+.profile_details_head{
+  width: 100%;
+  padding: 10px;
+  overflow-y: auto;
+  height: 100vh;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
+}
+.profile_details_container{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+   padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.profile_details{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.caption_details p{
+  padding: 10px 0;
+  font-family: "Helvetica",sans-serif;
+  font-weight: bold;
+}
+.profile_details_show{
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.profile_details_show button{
+ padding: 13px ;
+ border: none;
+ width: 150px;
+ border-radius: 5px;
+ font-size: 15px;
+ color: #fff;
+ font-family: "works",sans-serif;
+ font-weight: bold;
+ background: rgb(255, 0, 64);
+ transition: 0.5s;
+}
+.profile_details_show button:hover{
+  color: #000;
  
+  background: rgb(224, 208, 208);
+ }
+.profile_details_show h1{
+  font-size: 30px;
+}
+.profile_details_show p{
+  font-size: 15px;
+  width: 350px;
+  font-weight: 600px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+ .profile_details img{
+width: 100px;
+height: 100px;
+object-fit: cover;
+border-radius: 50%;
+
+ }
+ .profile_scrolls{
+  overflow-y: auto;
+  width: 64rem;
+  height: 450px;
+  padding: 10px;
+  scrollbar-width:1px;
+  scroll-padding-top: 40px;
+  scroll-behavior: smooth;
+  display: grid;
+  transition: 0.5s;
+  grid-template-columns: repeat(8,1fr);
+  gap: 15px;
+  }
+ .profile_scrolls img,
+ .profile_scrolls video{
+  width: 150px;
+  object-fit: cover;
+   display: flex;
+  height: 200px;
+ }
 @media(max-width:4000px){
-  .video-container {
-    position: relative;
-    width: 500px;
-    height: 100vh;
-    padding: 10px;
+  .sidebarse {
+    width: 100%;
+    background-color: rebeccapurple; 
+    scrollbar-width:1px;
+      scroll-padding-top: 40px;
+      scroll-behavior: smooth;
+      overflow-y: auto;
+      padding-top: 20px;
+       height: 100%;
+    transition: width 0.3s ease;
+    /* overflow-y: auto; */
   }
   .main_bg video{
     display: flex;
@@ -1554,99 +1697,23 @@ gap: 40px;
     width: 100%;
     height: 100vh;
   }
-  .potential{
+     
+   .signup_header{
     width: 100%;
     height: 100vh;
-    display: flex;
-    /* overflow-y:auto ; */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* padding: 60px 0px; */
-    /* background: #f4f5f6; */
-   }
-   .potential a{
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 20px;
-    font-size: 30px;
-   }
-   .potential_contains{
-    padding: 30px 0px;
-    width: 100%;
-    height: 200vh;
-    margin-top: 30px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(3,1fr);
-     border-radius: 20px;
-   
-    background: #fff;
-    }
-    .Homepage_details{
-      width: 100%;
-      height: 100%;
-      /* background: #f4f5f6; */
-      display: flex;
-      justify-content: center;
-     }
-    
-.Homepage_lines{
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  scrollbar-width: none;
-     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background: #eeebeb;
-    /* padding: 80px 0px; */
-    /* padding: 0px; */
-    /* margin: 0  300px; */
+    /* position: fixed; */
+    background: #918585;
+    /* overflow-x: hidden; */
   }
-  
-  .HomePage_Upper{
-    /* width: 100%; */
-    display: flex;
-    /* align-items: center; */
-    margin-top: 140px;
-    justify-content: space-between;
-     width: 300px;
-    align-items: center;
-   }
-   .tiktokProfile{
-    display: flex;
-    gap: 20px;
-    }
-    .tiktokProfile img{
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      border-radius: 50px;
-    }
-    .tiktokProfile div h2{
-      font-size: 15px;
-    }
-   .tiktok_mingle button{
-    color: rgba(255, 0, 0, 0.877);
-    background: transparent;
-    padding: 7px 10px;
-    border: 2px solid rgba(255, 0, 0, 0.877);
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-family:'Tahoma',sans-serif;
-    cursor: pointer;
-   }
-  
-  
  
 }
 
 /* mobile screen */
 @media(max-width:1450px){
+  .profile-page{
+    width: 100%;
+    height: 100%;
+  }
   .login-container button{
     display: flex;
     justify-content: center;
@@ -1692,73 +1759,14 @@ gap: 40px;
     padding: 30px;
     border: 1px solid #000;
     }
-    .potential{
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      /* overflow-y:auto ; */
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 60px 0px;
-      /* background: #f4f5f6; */
-     }
-     .potential a{
-      position: absolute;
-      left: 0;
-      top: 0;
-      padding: 20px;
-      font-size: 30px;
-     }
-     .potential_contains{
-      padding: 30px 0px;
-      width: 100%;
-      height: 100vh;
-      margin-top: 30px;
-      display: grid;
-      align-items: center;
-      grid-template-columns: repeat(3,1fr);
-       border-radius: 20px;
-     
-      background: #fff;
-      }
-      .Homepage_details{
+   
+      
+      .signup_header{
         width: 100%;
         height: 100%;
-        /* overflow-y: auto; */
-      
-        background: #f4f5f6;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       }
-      
-      .Homepage_lines{
-        width: 100%;
-         display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        /* padding: 10px 0px; */
-        /* padding: 0px; */
-        margin: 0px;
-
-      }
-      
-      .HomePage_Upper{
-        /* width: 100%; */
-        display: flex;
-        /* align-items: center; */
-        justify-content: space-between;
-        padding: 15px 0px;
-        width: 300px;
-        align-items: center;
-       }
-       .video-container {
-        position: relative;
-        width: 250px;
-        height: 100vh;
-        padding: 10px;
+        /* position: fixed; */
+        background: #918585;
+        /* overflow-x: hidden; */
       }
 }
 @media(max-width:1300px){
@@ -1807,12 +1815,7 @@ gap: 40px;
     outline: none;
     transition: 0.5s ease;
   }
-  .matched-users{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 40px;
-    gap: 50px;
-  }
+  
   .user-card{
     width: 280px;
     padding: 20px 0px 20px 10px; 
@@ -1853,12 +1856,7 @@ gap: 40px;
     border-radius: 5px;
     transition: 0.5s ease;
   }
-  .profiles_ladies{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding: 20px;
-    gap: 20px;
-  }
+ 
   
 .profile-card{
   width: 220px;
@@ -1884,21 +1882,8 @@ gap: 40px;
 }
 
 /* single men */
-.single-men-page{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 40px;
-}
-.profilemen{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  padding: 20px;
-  gap: 10px;
-}
+ 
+ 
  
  
 }
@@ -1906,7 +1891,11 @@ gap: 40px;
   .Contents{
     padding: 15px 0px;
   }
-
+  .searchform{
+  
+    border-radius: 10px;
+    margin-left: 80px;
+  }
   .Contents p{
       letter-spacing: 0px;
      font-size: 15px;
@@ -1978,26 +1967,8 @@ gap: 40px;
     height: 100vh;
     background: #f4f5f6;
   }
-  .potential_contains{
-    padding: 10px;
-    /* width: 100%; */
-    height: 100%;
-    margin-top: 30px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(2,1fr);
-    /* border: 1px solid #000; */
-    border-radius: 20px;
-     
-   }
- 
+   
   
-  .matched-users{
-    display: grid;
-    /* grid-template-columns: repeat(3,1fr); */
-    padding: 40px;
-    gap: 20px;
-  }
   .user-card{
     width: 230px;
     padding: 10px 0px 30px 10px; 
@@ -2028,17 +1999,6 @@ gap: 40px;
     border-radius: 5px;
    }
   
-  
-  .matched-page a{
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 5px;
-    padding: 5px 13px;
-    color: #fff;
-    margin: 10px;
-    background: rebeccapurple;
-  }
   .single-women-page{
     width: 100%;
     height: 100%;
@@ -2063,12 +2023,7 @@ gap: 40px;
     font-family: "Trebuchet MS",sans-serif;
     font-size: 50px;
   }
-  .profiles_ladies{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding: 40px;
-    gap: 70px;
-  }
+ 
   
   .profile-card{
     width: 230px;
@@ -2109,14 +2064,31 @@ gap: 40px;
       font-size: 10px;
       font-family: "Verdana",sans-serif;
     }
-    .profilemen{
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      padding: 30px;
-      gap: 50px;
+  
+    .sidebarse {
+        padding-top: 20px;
+         height: 100vh;
+     }
+     .tiktok_container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #eeebeb;
     }
 }
 @media(max-width:950px){
+  .search-page a{
+    padding: 10px;
+    font-size: 0.6rem;
+    background: #d1cece;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .search-result span{
+    font-size: 13px;
+  }
+ 
   .Contents{
     padding: 8px 0px;
   }
@@ -2201,7 +2173,7 @@ box-shadow: none;
 .form-groups input{
   width: 450px;
   height: 55px;
-  padding-left: 0px;
+  padding-left: 10px;
 }
 
 .login-container button{
@@ -2239,12 +2211,7 @@ box-shadow: none;
   padding: 5px;
   cursor: pointer;
 }
-.profiles_ladies{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  padding: 20px;
-  gap: 20px;
-}
+ 
 
 .profile-card{
   width: 200px;
@@ -2257,76 +2224,7 @@ box-shadow: none;
 }
 @media(max-width:840px){
   /* Homepage background */
-.Homepage_details{
-  width: 100%;
-  height: 100%;
-  background: #f4f5f6;
-  display: flex;
-  justify-content: center;
- }
-
-.Homepage_lines{
-  padding: 10px 0px;
-}
-
-.HomePage_Upper{
-  /* width: 100%; */
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  padding: 10px 0px;
- }
- .tiktokProfile{
-  display: flex;
-  gap: 10px;
-  }
-  .tiktokProfile img{
-    width: 10px;
-    height: 10px;
-    border-radius: 50px;
-  }
-  .tiktokProfile div h2{
-    font-size: 15px;
-  }
- .tiktok_mingle button{
-  color: rgba(255, 0, 0, 0.877);
-  background: transparent;
-  padding: 4px 7px;
-  border: 2px solid rgba(255, 0, 0, 0.877);
-  letter-spacing: 0px;
-  font-weight: bold;
-  font-family:'Tahoma',sans-serif;
-  cursor: pointer;
- }
-.main_bg{
-  display: flex;
-  margin-left: 40px;
-}
- .main_bg video{
-  display: flex;
-   width: 200px;
-  border-radius: 20px;
- }
- .Social_Bg_icons{
-  margin: 14rem 0px 0px 0px;
-  padding: 5px;
- }
-
- .mingle_vibes {
-  display: flex;
-  flex-direction: column;
-  font-size: 15px;
-  margin: 10px 0px;
-  cursor: pointer;
- }
- .mingle_vibes button{
-  border: none;
-  background: none;
- }
-
- .mingle_vibes span{
-  font-size: 10px;
- }
+ 
   .sidebar {
     width: 170px; /* Adjust width as needed */
     /* height: 500px; */
@@ -2462,13 +2360,7 @@ box-shadow: none;
     padding: 5px 7px; 
   height: 230px;
   }
-  .HomePage_Upper{
-    /* width: 100%; */
-    display: flex;
-    /* align-items: center; */
-    margin-top: 90px;
-   
-   }
+  
    .search-page{
     padding-top: 10px;
   }
@@ -2487,11 +2379,7 @@ box-shadow: none;
     border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
    }
-  .searching_contains button{
-    padding: 13px;
-    border: none;
-    background: transparent;
-  }
+ 
   .search-page h1{
     font-size: 30px;
   }
@@ -2510,91 +2398,44 @@ box-shadow: none;
     border-radius: 10px;
   }
   .menu-item span {
-    font-size: 10px;
+    font-size: 15px;
     margin-left: 5px;
     font-weight: bold;
     font-family: "Arial Black",sans-serif;
     color: #fff;
     transition: opacity 0.2s ease;
   }
-}
-@media(max-width:768px){
-  .Homepage_details{
-   height: 100%;
-    padding-right: 0px;
-      justify-content: start;
-     overflow-y: auto;
-   }
-  
-  .Homepage_lines{
-    padding: 10px 0px;
-    /* margin-right: 190px; */
-    /* background: #f4f5f6; */
-
+  .HomePage_Upper {
+    gap: 20px;
+    padding: 0px 0;
   }
-  
-  .HomePage_Upper{
-    /* width: 100%; */
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    gap: 90px;
-    padding: 10px 0px;
-   }
-   .tiktokProfile{
-    display: flex;
-    gap: 10px;
-    }
-    .tiktokProfile img{
-      width: 10px;
-      height: 10px;
-      border-radius: 50px;
-      cursor: pointer;
-    }
-    .tiktokProfile div h2{
-      font-size: 15px;
-    }
-   .tiktok_mingle button{
+  .tiktok_mingle button{
     color: rgba(255, 0, 0, 0.877);
     background: transparent;
-    padding: 4px 7px;
+    padding: 3px 4px;
     border: 2px solid rgba(255, 0, 0, 0.877);
-    letter-spacing: 0px;
+    letter-spacing: 1px;
     font-weight: bold;
+    border-radius: 5px;
+    font-size: 10px;
     font-family:'Tahoma',sans-serif;
     cursor: pointer;
    }
-  .main_bg{
-    display: flex;
-    margin-left: 40px;
+}
+@media(max-width:768px){
+
+  .menu-item{
+    margin-top: 10px;
   }
-   .main_bg video{
-    display: flex;
-     width: 190px;
-    border-radius: 5px;
-   }
-   .Social_Bg_icons{
-    margin: 14rem 0px 0px 0px;
-    padding: 5px;
-   }
-  
-   .mingle_vibes {
-    display: flex;
-    flex-direction: column;
-    font-size: 10px;
-    margin: 10px 0px;
-    cursor: pointer;
-   }
-   .mingle_vibes button{
-    border: none;
-    background: none;
-    font-size: 12px;
-   }
-  
-   .mingle_vibes span{
-    font-size: 10px;
-   }
-  
+  .menu-item span {
+    font-size: 11px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-family: "Arial Black",sans-serif;
+    color: #fff;
+    transition: opacity 0.2s ease;
+  }
+   
   .sidebar{
     width: 0px;
     display: none;
@@ -2668,26 +2509,20 @@ box-shadow: none;
       align-items: center;
       gap: 40px;
     }
-    .potential{
-      width: 100%;
-      height: 100vh;
-      /* overflow-y: none; */
-        display: flex;
-      justify-content: center;
-     }
+     
      .open {
       width: 170px;
     }
     
     .closed {
-      width: 50px;
+      width: 44px;
     }  
     .toggle-icon {
       display: block;
       cursor: pointer;
       position: absolute;
       right: -10px;
-      top: 45px;
+      top: 0px;
       width: 28px;
       border: 2px solid #34254a;
       border-radius: 50%;
@@ -2696,11 +2531,9 @@ box-shadow: none;
     font-size: 16px;
     }
     .searchform{
-      
-      padding: 1px 2px 1px 5px;
-       border-radius: 10px;
-     
-      margin-left: 140px;
+  
+      border-radius: 10px;
+      margin-left: 40px;
     }
    
 }
@@ -2717,7 +2550,7 @@ box-shadow: none;
   .form-groups input{
     width: 250px;
     height: 50px;
-    padding-left: 0px;
+    padding-left: 10px;
   }
   
   .login-container button{
@@ -2729,13 +2562,38 @@ box-shadow: none;
      padding: 22px;
     font-size: 20px;
   }
-  .matched-users{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 20px;
-    gap: 15px;
+
+  
+  .main_bg {
+    width: 100%;
+    
   }
   
+  .video-container {
+    width: 100%;
+    position: relative;
+    padding-bottom: 36.25%;
+    transition: 0.5s ease;
+  }
+  
+  .video-container img {
+    /* position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    height: 260px;
+  }
+  .HomePage_Upper {
+    gap: 20px;
+    padding: 20px 0;
+  }
+  .searchform{
+  
+    border-radius: 10px;
+    margin-left: 10px;
+  }
 }
 
 @media(max-width:620px){
@@ -2804,43 +2662,7 @@ box-shadow: none;
   padding: 10px;
   border: 1px solid #000;
   }
-  .potential_contains{
-    padding: 10px;
-    /* width: 100%; */
-    height: 100%;
-    margin-top: 30px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(1,1fr);
-    /* border: 1px solid #000; */
-    border-radius: 20px;
    
-    background: #fff;
-    }
-   .match{
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    
-   }
-   .match p{
-    position: absolute;
-    top: 145px;
-    margin-left: 145px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #1d9444;
-     padding: 2px;
-    border-radius: 10px;
-    background: #fbfdfc;
-     font-family: "Geogia",serif;
-  
-   }
-   .match img{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-   }
    .searching_contains form{
     padding: 1px 10px 1px 5px;
      border-top-left-radius: 30px;
@@ -2852,11 +2674,7 @@ box-shadow: none;
     padding: 10px;
     width: 250px;
    }
-  .searching_contains button{
-    padding: 15px;
-    border: none;
-    background: transparent;
-  }
+ 
   .search-page h1{
     font-size: 25px;
   }
@@ -2881,15 +2699,7 @@ box-shadow: none;
     padding: 10px;
     border-radius: 10px;
   }
-  .people-in-your-area-page a{
-    position: absolute;
-    left: 20px;
-    background: #000;
-    font-size: 14px;
-    padding: 4px 4px 1px 4px;
-    border-radius: 50%;
-     top: 20px;
-  }
+ 
   .people-grid{
   display: flex;
   padding: 30px;
@@ -2906,13 +2716,9 @@ box-shadow: none;
     font-size: 9px;
     padding: 2px;
    }
-   .profiles_ladies{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 40px;
-    gap: 20px;
-  }
+    
   .sidebarse {
+     
      height: 100vh;
     padding: 6px 2px;
     /* position: relative; */
@@ -2970,16 +2776,7 @@ box-shadow: none;
     cursor: pointer;
     transition: transform 0.5s ease;
   }
-  .main_bg video{
-    display: flex;
-     width: 120px;
-    border-radius: 5px;
-   }
-   .logo-container {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-  }
+   
   .login-form{
     display: flex;
     justify-content: center;
@@ -2989,12 +2786,7 @@ box-shadow: none;
   }
 }
 @media(max-width:540px){
-  .Homepage_lines{
-    padding: 10px 0px;
-    margin-right: 50px;
-    background: #f4f5f6;
-
-  }
+  
   .ant-layout-sider-children{
     width: 100%;
   }
@@ -3009,6 +2801,10 @@ box-shadow: none;
     font-size: 14px;
     position: relative; 
   }
+  .search-result button{
+    padding: 10px 6px;
+  }
+ 
   .posts{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -3022,18 +2818,8 @@ box-shadow: none;
     height: 100%;
     background: #f4f5f6;
   }
-  .matched-users{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 20px;
-    gap: 30px;
-  }
-  .profiles_ladies{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    padding: 40px;
-    gap: 20px;
-  }
+ 
+  
   .sign-form{
     width: 100%;
     /* height: 200px; */
@@ -3056,66 +2842,7 @@ box-shadow: none;
 }
 
 @media(max-width:500px){
-  .potential_contains{
-    padding:0px;
-    width: 200px;
-    height: 100%;
-    overflow: none;
-    margin-top: 0px;
-    display: grid;
-    
-    align-items: center;
-    /* grid-template-columns: repeat(2,1fr); */
- 
-   }
-   .potential{
-    width: 100%;
-    height: 100vh;
-    overflow: none;
-    display: flex;
-    /* overflow-y:auto ; */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0px;
-    /* background: #f4f5f6; */
-   }
-    
-   .match{
-    padding: 0px;
-    display: flex;
-    gap: 0px;
-    align-items: center;
-    
-   }
-
-   .match img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-   }
-   .other_potential{
-    padding: 1s0px;
-    transition: 0.5s ease;
-  
-   }
-   .other_potential h3{
-    font-size: 12px;
-    font-weight: 200;
-    font-family: "Tahoma",sans-serif;
-   }
-   .other_potential button{
-    padding: 4px;
-    border-radius: 2px;
-    margin-top: 7px;
-    color: #fff;
-     font-size: 10px;
-     transition: 0.5s ease;
-    background: rebeccapurple;
-    border: none;
-    font-family: "Trebuchet MS",sans-serif;
-  
-   }
+   
   .header_container{
     display: flex;
     align-items: center;
@@ -3193,7 +2920,32 @@ output {
   height: 40px;
   padding-left: 10px;
 }
+.signup-form  .form-group input {
+  width: 150px;
+  padding: 10px;
+  border: 1px solid rgb(182, 124, 168);
+  border-radius: 4px;
+  outline: none;
+  transition: 0.5s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.signup-form .formSpace .form-group  select{
+  width: 150px;
+  transition: 0.5s ease-in-out;
+  border: 1px solid rgb(182, 124, 168);
+  padding: 10px;
+  outline: none;
+   border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+ 
+ 
+.signup-form input[type="range"] {
+  width: 150px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 
+  }
 .login-container button{
    
   max-width: 270px;
@@ -3249,84 +3001,18 @@ output {
     
     padding: 5px;
    }
-   .matched-users{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    padding: 20px;
-    gap: 30px;
-  }
-  .arrowBack{
-    margin: 0px;
    
-  }
-  .Homepage_details{
-    width: 100%;
-    height: 100%;
-    /* overflow-y: auto; */
-  
-    background: #f4f5f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   }
-  
-  .Homepage_lines{
-    width: 100%;
-     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    /* padding: 10px 0px; */
-    /* padding: 0px; */
+  .arrowBack{
+    width: 36px;
+    height: 33px;
     margin: 0px;
-
   }
-  
-  .HomePage_Upper{
-    /* width: 100%; */
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(2,1fr);
-    /* align-items: center; */
-    /* justify-content: space-between; */
-    padding: 5px 0px;
-    width: 200px;
-    align-items: center;
-   }
-   .tiktokProfile{
-    display: flex;
-    gap: 0px;
-    }
-    .tiktokProfile img{
-      width: 10px;
-      height: 10px;
-      cursor: pointer;
-      border-radius: 50px;
-    }
-    .tiktokProfile div h2{
-      font-size: 11px;
-    }
-    .tiktokProfile div span{
-      font-size: 11px;
-    }
-   .tiktok_mingle button{
-    color: rgba(255, 0, 0, 0.877);
-    background: transparent;
-    padding: 2px 4px;
-    border: 2px solid rgba(255, 0, 0, 0.877);
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-family:'Tahoma',sans-serif;
-    cursor: pointer;
-   }
-   .main_bg video{
-    display: flex;
-     width: 100px;
-     margin-left: 40px;
-     position: relative;
-    border-radius: 5px;
-    }
-  
+  .arrowBack a{
+    padding: 7px;
+    font-size: 10px;
+    color: rgb(97, 24, 117);
+  }
+   
  
   .searching_contains{
     margin: 40px 0px;
@@ -3337,32 +3023,49 @@ output {
   }
   .searching_contains input{
     padding: 20px;
-    width: 170px;
+    width: 160px;
     height: 10px;
     font-size: 10px;
     border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
    }
-  .searching_contains button{
-    padding: 7px;
-    border: none;
-    background: transparent;
+   .searching_contains button[type="submit"]{
+    padding: 8px;
+ 
   }
+ 
   .search-page h1{
     font-size: 30px;
   }
   
  
-  
+ 
   .search-result{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     font-size: 10px;
     border: 1px solid #000;
     padding: 6px;
     border-radius: 10px;
+  }
+  .search-result span{
+    font-size: 10px;
+  }
+  .search-result button{
+    width: 50px;
+    height: 30px;
+    /* padding: 5px 6px; */
+    font-size: 8px;
+  }
+  .search-page a{
+    width: 70px;
+    padding: 6px;
+    font-size: 0.4rem;
+    background: #d1cece;
+    border-radius: 5px;
+    color: #fff;
   }
   .people-in-your-area-page{
     width: 100%;
@@ -3402,12 +3105,7 @@ output {
     flex-direction: column;
     padding:10px;
   }
-  .profiles_ladies{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    padding: 0px;
-    gap: 20px;
-  }
+  
   .single-women-page h1{
     padding: 10px;
     font-family: "Trebuchet MS",sans-serif;
@@ -3436,10 +3134,29 @@ output {
     font-family: "works",sans-serif;
   font-size: 15px;
   }
-  .profilemen{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    padding: 30px;
-    gap: 50px;
+ 
+  .HomePage_Upper {
+    width: 180px;
+    gap: 0px;
+    padding: 10px 0;
   }
+  .tiktokProfile a h2 {
+    margin: 0;
+    font-size: 13px;
+  }
+  .tiktokProfile  span{
+    font-size: 8px;
+  }
+  .tiktok_mingle button{
+    color: rgba(255, 0, 0, 0.877);
+    background: transparent;
+    padding: 5px 4px;
+    border: 1px solid rgba(255, 0, 0, 0.877);
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 5px;
+    font-family:'Tahoma',sans-serif;
+    cursor: pointer;
+   }
 }

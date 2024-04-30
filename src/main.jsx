@@ -16,6 +16,8 @@ import SingleWomenPage from './tiktokBG/LeftSide_tiktok/subPages/Singlewomen.jsx
 import SingleMenPage from './tiktokBG/LeftSide_tiktok/subPages/men.jsx';
  import SignUp from './Components/Registeration/SignUp.jsx';
  import Appssss from './tiktokBG/Tiktok_Homepage/SideberItems.jsx';
+import UploadDetailsPage from './tiktokBG/Tiktok_Homepage/subPages/UploadDetailsPage.jsx';
+import { Profilehome } from './tiktokBG/Tiktok_Homepage/ProfilePhoto';
  
 
 // Define the layout component
@@ -50,8 +52,16 @@ const routes = [
         element: <ProfilePage />,
       },
       {
+        path: "/profile-page/:id",
+        element: <Profilehome/> ,
+      },
+      {
         path: "/upload",
         element: <UploadPage />,
+      },
+      {
+        path: "/upload-details",
+        element: <UploadDetailsPage />,
       },
       {
         path: "/potential",
@@ -85,6 +95,7 @@ const routes = [
         path: "/singleMen",
         element: <SingleMenPage />,
       },
+
       {
         path: "/admin/",
         element: <AllTiktok_Section />,

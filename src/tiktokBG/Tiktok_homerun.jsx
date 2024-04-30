@@ -1,7 +1,6 @@
 import React from 'react'
-import { HeroPage } from './Tiktok_Homepage/HeroPage'
-import { Leftside } from './LeftSide_tiktok/Leftside'
-import Appssss from './Tiktok_Homepage/SideberItems'
+  import Appssss from './Tiktok_Homepage/SideberItems'
+import HeroPage from './Tiktok_Homepage/HeroPage'
  
 export const Tiktok_homerun = () => {
   return (

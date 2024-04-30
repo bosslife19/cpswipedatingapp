@@ -11,7 +11,7 @@ const SingleWomenPage = () => {
   const singleWomenProfiles = [
     { id: 1, name: 'Sarah Johnson', imageUrl: peopled, caption: 'Nature lover and fitness enthusiast' },
     { id: 2, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
-    { id: 3, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
+    // { id: 3, name: 'Emily Davis', imageUrl: peoples, caption: 'Passionate about cooking and traveling' },
  
     // Add more single women profiles as needed
   ];
@@ -26,7 +26,7 @@ const SingleWomenPage = () => {
       <div className="profiles_ladies">
         {singleWomenProfiles.map(profile => (
           <div key={profile.id} className="profile-card">
-            <Link to={`/profile/${profile.id}`}>
+               <Link to={`/profile-page/:id`}>
               <img src={profile.imageUrl} alt={profile.name} />
             </Link>
             <h3>{profile.name}</h3>

@@ -26,7 +26,7 @@ const SingleMenPage = () => {
       <div className="profilemen">
         {singleMenProfiles.map(profile => (
           <div key={profile.id} className="profile-card">
-            <Link to={`/profile/${profile.id}`}>
+          <Link to={`/profile-page/:id`}>
               <img src={profile.imageUrl} alt={profile.name} />
             </Link>
             <h3>{profile.name}</h3>

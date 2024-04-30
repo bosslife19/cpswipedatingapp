@@ -10,9 +10,9 @@ export const Nav = () => {
     <>
        <div className="tiktokHeader">
         <div className="tiktok_container">
-            <div className="">
+            <Link to="/" className="NavLink">
                <h2> Dating</h2>
-            </div>
+            </Link>
             <div className="searchform">
                 <div className="icons">
                 <IoIosSearch />

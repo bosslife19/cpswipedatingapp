@@ -26,7 +26,9 @@ const PeopleInYourAreaPage = () => {
       <div className="people-grid">
         {people.map(person => (
           <div key={person.id} className="person-card">
+            <Link to={`/profile-page/:id`}>
             <img src={person.imageUrl} alt={person.name} />
+            </Link>
            <div className="captions">
            <h3>{person.name}</h3>
             <p>{person.caption}</p>
