@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import profile from "../../assets/pack.jpg"
-import sleeping from "../../assets/sleeping.mp4";
-import { Nav } from '../tiktok_Navbar/Nav';
+ import { Nav } from '../tiktok_Navbar/Nav';
 import { Leftside } from '../LeftSide_tiktok/Leftside';
 
 export const Profilehome = () => {

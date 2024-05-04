@@ -883,17 +883,18 @@ list-style: none;
 .profile-page{
   width: 100%;
   padding: 15px;
-  overflow-y: auto;
-  height: 100vh;
-  scrollbar-width:none;
-  scroll-behavior: smooth;
-  background: #f4f5f6;
+   height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   white-space: normal;
+  background: #fff;
 }
 .profile_contains{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  /* flex-wrap: wrap; */
   /* padding: 30px; */
  }
 .profile-header{
@@ -903,7 +904,7 @@ list-style: none;
  justify-content: center;
  align-items: center;
  flex-direction: column;
- padding: 10px 0;
+ padding: 10px 0 15px 0;
 }
 .profile-header img{
   /* margin-top: 10px; */
@@ -1028,22 +1029,35 @@ object-fit: cover;
 
  .upload-details-page{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   /* overflow-y: auto; */
-  overflow: hidden;
-  height: calc(100vh - 64px); /* Adjust 64px according to your Navbar height */
+    ; /* Adjust 64px according to your Navbar height */
   width: 100%;
+ }
+ .files{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+ }
+ .files img,
+ .files video{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
  }
  .display_flex{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
-  margin-left: 40px;
   background: #f4f5f6;
-  height: 68vh;
-  padding: 20px;
+  height: 100%;
+  gap: 30px;
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
   border-radius: 15px;
  }
  .display_flex form{
@@ -1060,13 +1074,7 @@ object-fit: cover;
    font-family: "Verdana",sans-serif;
  }
  
- .display_flex{
-  display: flex;
-  justify-content: space-between;
-  padding-left: 100px;
-  padding-right: 100px;
- 
- }
+
  .display_flex form div{
   display: flex;
   flex-direction: column;
@@ -1134,7 +1142,7 @@ object-fit: cover;
   width: 100%;
   padding: 20px 0px;
   overflow-y: auto;
-  height: 100vh;
+  height: 640px;
   scrollbar-width:none;
   scroll-behavior: smooth;
  }
@@ -1178,6 +1186,7 @@ object-fit: cover;
   width: 100%;
   padding: 50px;
   overflow-y: auto;
+  flex-wrap: wrap;
   height: 100vh;
   scrollbar-width:none;
   scroll-behavior: smooth;
@@ -1278,7 +1287,7 @@ object-fit: cover;
 .person-card{
   padding: 30px;
   display: flex;
-  border: 1px solid #d1cece;
+  /* border: 1px solid #d1cece; */
   border-radius: 10px;
   justify-content: center;
 }
@@ -1642,42 +1651,66 @@ border-radius: 50%;
 
  }
  .profile_scrolls{
+  padding-left: 10px;
+  padding-right: 10px;
+    width: 100%;
   overflow-y: auto;
-  width: 64rem;
-  height: 450px;
-  padding: 10px;
-  scrollbar-width:1px;
-  scroll-padding-top: 40px;
-  scroll-behavior: smooth;
-  display: grid;
+  /* width: 100%; */
+  height: 405px !important;
+  /* padding: 10px; */
+  overflow-x: scroll;
+  scrollbar-width: none;
+  white-space: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   transition: 0.5s;
-  grid-template-columns: repeat(8,1fr);
-  gap: 15px;
+   gap: 10px;
+    
   }
  .profile_scrolls img,
  .profile_scrolls video{
-  width: 150px;
+  width: 140px;
   object-fit: cover;
    display: flex;
-  height: 200px;
+  height: 140px;
  }
+
+
 @media(max-width:4000px){
   .sidebarse {
     width: 100%;
     background-color: rebeccapurple; 
     scrollbar-width:1px;
-      scroll-padding-top: 40px;
+      /* scroll-padding-top: 40px; */
       scroll-behavior: smooth;
       overflow-y: auto;
       padding-top: 20px;
-       height: 100%;
+       height: 100vh;
     transition: width 0.3s ease;
     /* overflow-y: auto; */
   }
-  .main_bg video{
+  .profile_scrolls{
+    width: 100%;
+    overflow-y: auto;
+    /* width: 100%; */
+    height: 550px ;
+    /* padding: 10px; */
+    overflow-x: scroll;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: 0.5s;
+     gap: 15px;
+    }
+  .main_bg video,
+  .main_bg img{
     display: flex;
      width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
    }
   .login-container button{
     display: flex;
@@ -1768,6 +1801,21 @@ border-radius: 50%;
         background: #918585;
         /* overflow-x: hidden; */
       }
+      .profile_scrolls{
+        width: 100%;
+        overflow-y: auto;
+        /* width: 100%; */
+        height: 406px;
+        /* padding: 10px; */
+        overflow-x: scroll;
+        scrollbar-width: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        transition: 0.5s;
+         gap: 15px;
+        }
 }
 @media(max-width:1300px){
   .login-container{
@@ -1880,12 +1928,21 @@ border-radius: 50%;
   font-family: "Poppins",sans-serif;
 
 }
-
-/* single men */
- 
- 
- 
- 
+.files img,
+.files video{
+ width: 150px;
+ height: 150px;
+ object-fit: cover;
+ border-radius: 10px;
+}
+.potential{
+  width: 100%;
+  padding: 10px 0px;
+  overflow-y: auto;
+  height: 840px;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
+ }
 }
 @media(max-width:1050px){
   .Contents{
@@ -1964,9 +2021,7 @@ border-radius: 50%;
   }
   .profile-page{
     width: 100%;
-    height: 100vh;
-    background: #f4f5f6;
-  }
+    }
    
   
   .user-card{
@@ -2033,15 +2088,15 @@ border-radius: 50%;
     box-shadow: none;
   }
   .people-grid{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2,1fr);
     padding: 20px;
-     gap: 40px;
+     gap: 40px; */
     }
     .person-card{
       padding: 10px;
       display: flex;
-      border: 1px solid #d1cece;
+      /* border: 1px solid #d1cece; */
       border-radius: 5px;
       justify-content: center;
     }
@@ -2221,6 +2276,21 @@ box-shadow: none;
   box-shadow: none;
 }
 
+ .display_flex form input[type="text"]{
+  width: 40%;
+  height: 70px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+ }
+ .display_flex form input[type="date"]{
+  width: 20%;
+  height: 40px;
+  font-family: "works",sans-serif;
+  border-radius: 5px;
+  outline: none;
+ }
 }
 @media(max-width:840px){
   /* Homepage background */
@@ -2421,9 +2491,16 @@ box-shadow: none;
     font-family:'Tahoma',sans-serif;
     cursor: pointer;
    }
+   
 }
 @media(max-width:768px){
-
+  .profilemen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
   .menu-item{
     margin-top: 10px;
   }
@@ -2535,6 +2612,36 @@ box-shadow: none;
       border-radius: 10px;
       margin-left: 40px;
     }
+    .profile-page{
+      width: 100%;
+      /* padding: 5px; */
+      /* height: 100vh; */
+       display: flex;
+       justify-content: center;
+       align-items: center;
+      flex-wrap: wrap;
+     }
+    .profile_contains{
+      display: flex;
+       
+      
+      flex-wrap: wrap;
+       justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      }
+       .display_flex{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: 0px;
+        align-items: center;
+        margin-left: 0px;
+        /* background: #000; */
+         padding: 60px;
+        border-radius: 5px;
+       }
    
 }
 @media(max-width:700px){
@@ -2594,6 +2701,31 @@ box-shadow: none;
     border-radius: 10px;
     margin-left: 10px;
   }
+  .display_flex button{
+    background: rebeccapurple;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+    color: #fff;
+     font-family: "Verdana",sans-serif;
+   }
+   .display_flex form input[type="text"]{
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+   }
+   .display_flex form input[type="date"]{
+    width: 100%;
+    height: 40px;
+    font-family: "works",sans-serif;
+    border-radius: 5px;
+    outline: none;
+   }
 }
 
 @media(max-width:620px){
@@ -2632,9 +2764,10 @@ box-shadow: none;
        border-radius: 10px;
      
       margin-left: 50px;
+      margin-right: 10px;
     }
     .searchform input {
-      width: 160px;
+      width: 100%;
        border: none;
       background: transparent;
       padding-left: 20px;
@@ -2784,6 +2917,12 @@ box-shadow: none;
     background: linear-gradient(to bottom, rgb(226, 221, 226),rgb(255, 255, 255) );
     height: 100vh;
   }
+  .potential_contains{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   }
 }
 @media(max-width:540px){
   
@@ -2816,8 +2955,7 @@ box-shadow: none;
    .profile-page{
     width: 100%;
     height: 100%;
-    background: #f4f5f6;
-  }
+   }
  
   
   .sign-form{
@@ -2970,16 +3108,16 @@ output {
    border-radius: 5px;
  height: 20px;
  
-  margin-left: 10px;
+  margin-left: 0px;
 }
 .searchform input {
   width: 80px;
-  padding-left: 20px;
+  padding-left: 5px;
   font-size: 6px;
 }
 .searchform .icons{
   font-size: 7px;
-  padding: 7px 10px;
+  padding: 5px 6px;
 
 }
 .logo_icon{
@@ -2997,9 +3135,9 @@ output {
   }
   .upload_vid{
     gap: 2px;
-     font-size: 7px;
+     font-size: 5px;
     
-    padding: 5px;
+    padding: 3px;
    }
    
   .arrowBack{
@@ -3015,23 +3153,28 @@ output {
    
  
   .searching_contains{
-    margin: 40px 0px;
+    margin: 0px 0px;
   }
   .searching_contains form{
-    padding: 6px;
+    padding: 2px;
     border-radius: 10px;
+    background: none;
+    border: 1px solid #000;
   }
   .searching_contains input{
-    padding: 20px;
-    width: 160px;
-    height: 10px;
+    padding: 7px 3px;
+    width: 100px;
+    height: 5px;
     font-size: 10px;
     border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
    }
    .searching_contains button[type="submit"]{
-    padding: 8px;
- 
+    padding: 4px 3px;
+    border-left: 1px solid #000;
+    border-radius: 0px;
+    opacity: 0.7;
+    font-size: 8px;
   }
  
   .search-page h1{
@@ -3042,6 +3185,7 @@ output {
  
   .search-result{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -3082,28 +3226,42 @@ output {
     font-family: "works",sans-serif;
   }
   .people-grid{
-  display: grid;
-  grid-template-columns: repeat(1,1fr);
-  padding: 10px;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+  /* display: grid;
+  grid-template-columns: repeat(1,1fr); */
+  padding: 0px;
+  gap: 4px;
   }
   .person-card{
-    padding: 0px;
+    width: 100%;
+    padding: 5px;
+    justify-content: center;
     display: flex;
-    border: 1px solid #d1cece;
+    /* border: 1px solid #d1cece; */
     border-radius: 5px;
+    flex-direction: column;
     justify-content: center;
   }
   .person-card img{
-    width: 40px;
-    object-fit: cover;
+    width: 10px;
+    object-fit: contain;
   }
   .captions{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     flex-direction: column;
-    padding:10px;
+    padding: 10px 3px;
+  }
+  .captions h3{
+    font-size: 6px;
+    font-weight: bold;
+    font-family: "Hevetica",sans-serif;
+  }
+  .captions p{
+    font-size: 6px;
+    font-family: "poppins",sans-serif;
   }
   
   .single-women-page h1{
@@ -3136,27 +3294,197 @@ output {
   }
  
   .HomePage_Upper {
-    width: 180px;
+    width: 160px;
     gap: 0px;
-    padding: 10px 0;
+    padding: 0px 0;
   }
   .tiktokProfile a h2 {
     margin: 0;
-    font-size: 13px;
+    font-size: 8px;
+    font-family: "poppins",sans-serif;
   }
   .tiktokProfile  span{
-    font-size: 8px;
+    font-size: 5px;
   }
   .tiktok_mingle button{
     color: rgba(255, 0, 0, 0.877);
     background: transparent;
-    padding: 5px 4px;
+    padding: 3px 3px;
     border: 1px solid rgba(255, 0, 0, 0.877);
     letter-spacing: 1px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 3px;
     font-size: 5px;
-    font-family:'Tahoma',sans-serif;
+    font-family:'poppins',sans-serif;
     cursor: pointer;
    }
+   .match img{
+    width: 115px;
+    border-radius: 5px;
+   }
+   .other_potential{
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #d1cece;
+    border-radius: 10px;
+   }
+   .other_potential h3{
+    font-weight: normal;
+    font-size: 12px;
+    font-family: "Works",sans-serif;
+   }
+   .other_potential button{
+    padding:4px 6px;
+    background: rebeccapurple;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 7px;
+    font-family: "works,",sans-serif;
+   }
+   .potential_contains{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   }
+   .search-page{
+    width: 100%;
+    padding: 0px;
+  }
+   
+  .searching_contains form{
+    padding: 1px;
+    border-radius: 10px;
+  }
+ 
+  .matched-page h1{
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  
+  .matched-users{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .user-card{
+    width: 120px;
+    height: 100%;
+    padding: 6px; 
+    background: #eeebeb;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  .user-card a img{
+    width: 100%;
+    padding: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  
+  }
+  .user-card h3{
+    padding-top: 0px;
+    font-size: 11px;
+    font-family: "poppins",sans-serif;
+  }
+  .user-card p{
+    /* width: 300px; */
+    font-size: 5px;
+    padding: 3px 0px;
+    color: #1c1c21;
+    font-family: "poppins",sans-serif;
+  }
+  .action-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-right: 0px;
+    padding-top: 3px;
+  }
+  .action-buttons button{
+    padding: 3px 6px;
+    font-size: 8px;
+    background: rebeccapurple;
+    border: none;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 2px;
+    transition: 0.5s ease;
+  }
+  .action-buttons button:hover{
+    background: #918585;
+    color: #000;
+  
+  }
+  .upload-page a{
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    padding: 20px;
+   }
+   .upload-page h1{
+    padding: 20px;
+    color: rebeccapurple;
+    font-size: 20px;
+    font-family: "Monaco",monospace;
+   }
+  
+   .upload-container{
+    padding: 4px;
+    margin: 30px 0px;
+    height: 100%;
+     border: 3px solid rgb(187, 14, 14);
+   }
+   .drop-area{
+    width: 100%;
+    padding: 3px;
+    border: 1px solid #000;
+    }
+    .upload_contains{
+      width: 100%;
+      padding-left: 40px;
+      padding-right: 40px;
+      display: flex;
+      align-items: center;
+      /* gap: 100px; */
+      justify-content: center;
+      }
+      .main_bg video,
+  .main_bg img{
+    display: flex;
+     width: 100%;
+     padding: 20px;
+    border-radius: 10px;
+   }
+   .tiktokProfile img{
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    object-fit: contain;
+  }
+  .tiktokProfile{
+    display: flex;
+    gap: 4px;
+    }
+    .tiktok_container h2{
+      font-size: 10px;
+      font-weight: bold;
+    }
+    .tiktok_container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      border-bottom: 1px solid #eeebeb;
+    }
 }

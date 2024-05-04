@@ -4,8 +4,7 @@ import logoImg from "../../../assets/pack.jpg"; // Import the default profile im
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import profile from "../../../assets/pack.jpg"
-import sleeping from "../../../assets/sleeping.mp4";
-import { Nav } from '../Nav';
+ import { Nav } from '../Nav';
 import { Leftside } from '../../LeftSide_tiktok/Leftside';
  
 const ProfilePage = () => {
@@ -48,9 +47,9 @@ const ProfilePage = () => {
     <div className="profile-page">
       <div className="profile_contains">
         <div className="profile-header">
-          <label >
+          <div >
             <img src={profileImage} alt="Profile" />
-          </label>
+          </div>
           <input
             type="file"
             id="profile-upload"
@@ -61,7 +60,32 @@ const ProfilePage = () => {
           <h1>John Doe</h1>
           <p>Captions here...</p>
         </div>
+
         <div className="profile_scrolls">
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
+      <img src={profileDetails.img} alt="" />
       <img src={profileDetails.img} alt="" />
       <img src={profileDetails.img} alt="" />
       <img src={profileDetails.img} alt="" />

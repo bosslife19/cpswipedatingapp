@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import others from "../../assets/react.svg";
-// import sleeping from "../../assets/sleeping.mp4";
-import port from "../../assets/pack.jpg"
+ import port from "../../assets/pack.jpg"
  import { Link } from 'react-router-dom';
 
 export const HeroPage = () => {
@@ -54,9 +53,7 @@ export const HeroPage = () => {
                 <span>your caption</span>
               </div>
             </div>
-            <div className="tiktok_mingle">
-              <button>subscribe</button>
-            </div>
+            
           </div>
           <div className="main_bg">
             <div className="video-container">
