@@ -1,5 +1,5 @@
 // Import necessary modules
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
@@ -18,8 +18,25 @@ import SingleMenPage from './tiktokBG/LeftSide_tiktok/subPages/men.jsx';
  import Appssss from './tiktokBG/Tiktok_Homepage/SideberItems.jsx';
 import UploadDetailsPage from './tiktokBG/Tiktok_Homepage/subPages/UploadDetailsPage.jsx';
 import { Profilehome } from './tiktokBG/Tiktok_Homepage/ProfilePhoto';
+import {ProtectedLayout} from './Layout/Layout.jsx'
  
 
+export const AppContext = createContext();
+
+const AppProvider = ({children})=>{
+  const [appState, setAppState] = useState({
+    user:localStorage.getItem('user'),
+    token:localStorage.getItem('ACCESS_TOKEN'),
+    users: [],
+    uploads: [],
+
+  })
+  return (
+    <AppContext.Provider value ={{appState, setAppState,}}>
+        {children}
+    </AppContext.Provider>
+  )
+}
 // Define the layout component
 const Layout = () => {
   return (
@@ -47,6 +64,23 @@ const routes = [
       },
       
       
+     
+      {
+        path: "/sidebars",
+        element: <Appssss />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      
+    ],
+  },
+
+  {
+    path:'/',
+    element:<ProtectedLayout/>,
+    children: [
       {
         path: "/profile",
         element: <ProfilePage />,
@@ -70,14 +104,6 @@ const routes = [
       {
         path: "/searchingleft",
         element: <SearchPage />,
-      },
-      {
-        path: "/sidebars",
-        element: <Appssss />,
-      },
-      {
-        path: "/signup",
-        element: <SignUp />,
       },
       {
         path: "/peopleArea",
@@ -108,8 +134,8 @@ const routes = [
           
         ],
       },
-    ],
-  },
+    ]
+  }
 ];
 
 // Create browser router
@@ -117,5 +143,8 @@ const router = createBrowserRouter(routes);
 
 // Render the application
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <AppProvider>
+ <RouterProvider router={router} />
+  </AppProvider>
+ 
 );

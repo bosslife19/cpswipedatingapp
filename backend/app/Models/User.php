@@ -36,7 +36,9 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'images'=>'array',
         "password" =>'hashed',
-        'subscribed' => 'array', // Cast the 'subscribed' field to an array
+        'subscribed' => 'array',
+         // Cast the 'subscribed' field to an array
     ];
 }

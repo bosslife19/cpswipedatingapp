@@ -1,17 +1,22 @@
 // UploadDetailsPage.js
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import "../../../css_loaders/styles.css"
 import { Nav } from './../../tiktok_Navbar/Nav';
 import { Leftside } from './../../LeftSide_tiktok/Leftside';
+import axiosClient from '../../../axiosClient';
+import { AppContext } from '../../../main';
 const UploadDetailsPage = () => {
   const location = useLocation();
   const [name, setName] = useState('');
   const [caption, setCaption] = useState('');
   const [scheduleDate, setScheduleDate] = useState('');
   const navigate = useNavigate();
+  const {appState, setAppState} = useContext(AppContext);
 
-  const handleSubmit = (e) => {
+  const currentUser = JSON.parse(appState.user);
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
     
     // Save uploaded content to local storage
@@ -22,10 +27,28 @@ const UploadDetailsPage = () => {
       scheduleDate: scheduleDate
     };
 
-    localStorage.setItem('uploadedContent', JSON.stringify(content));
+    try {
+      const res = await axiosClient.post('/user/upload', {image: content.file},{
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      console.log(res.data)
+      localStorage.setItem('uploadedContent', JSON.stringify(content));
 
-    // Navigate back to homepage
-    navigate('/admin');
+      // setAppState({...appState,});
+      
+      
+    
+     
+
+      // Navigate back to profilepage
+      navigate(`/profile`);
+    } catch (error) {
+      console.log(error)
+    }
+
+    
   }; 
 
   return (

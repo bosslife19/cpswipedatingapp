@@ -6,18 +6,19 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public function getSubscribed(){
+    public function getSubscribed($id){
         $user = Auth::user();
-        $subscribedUsers = User::whereIn('id', $user->subscribed)->get();
+        $subscribedUsers = User::whereIn('id', $user->subscribed)->where('id', '!=', $id)->get();
 
             return response()->json(['subscribed_users' => $subscribedUsers]);
     }
 
-    public function getAll(){
-        $users = User::all();
+    public function getAll($id){
+        $users = User::where('id', '!=', $id)->get();
         
         return response($users, 200);
     }
@@ -31,37 +32,44 @@ class UserController extends Controller
 
         return response($user,200);
     }
-    public function getPotentials(){
+
+    public function getUser($id){
+        $user = User::find($id);
+
+        return response($user, 200);
+    }
+    public function getPotentials($id){
         $user = Auth::user();
         
         $potentials = User::where('age', '>=', $user->age)
         ->where('age', '<=', $user->age + 5)
-        ->where('type', $user->type)
+        // ->where('type', $user->type)
+        ->where('id', '!=', $id)
         ->get();
 
         return response($potentials, 200);
     }
 
     public function search(Request $request){
-        $user = $request['user'];
+        $user = $request['username'];
 
         $result = User::where('username', 'like', '%' . $user . '%')->get();
 
         return response($result, 200);
     }
 
-    public function getAllMen(){
+    public function getAllMen($id){
         $user = Auth::user();
 
-        $men = User::where('gender', 'male')->get();
+        $men = User::where('gender', 'male')->where('id', '!=', $id)->get();
 
         return response($men, 200);
     }
 
-    public function getAllWomen(){
+    public function getAllWomen($id){
         $user = Auth::user();
 
-        $men = User::where('gender', 'female')->get();
+        $men = User::where('gender', 'female')->where('id', '!=', $id)->get();
 
         return response($men, 200);
     }
@@ -70,25 +78,52 @@ class UserController extends Controller
     public function upload(Request $request)
     {
         
-        if ($request->hasFile('file') && $request->file('file')->isValid()) {
-            $file = $request->file('file');
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,mp4,mkv', // Adjust validation rules as needed
+        ]);
 
-            $authUser = Auth::user();
-            // Determine if it's an image or video based on the MIME type
-            
-           
-                // Handle image upload
-                $path = $file->store('images', 'public');
-                $authUser['images'] = [$path];
-                $authUser->save();
-            
-                // Handle video upload
-               
+        $user = auth()->user(); // Assuming you have authentication set up
 
-            return response()->json(['path' => $path]);
-        }
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $imagePath = $image->storeAs('public/images', $imageName); // Store image in storage/app/public/images
 
+        $userImages = $user->images ?? [];
+        $userImages[] = 'http://localhost:8000' . Storage::url($imagePath); // Add image URL to user's images array
+        $user->images = $userImages;
+        $user->save();
+
+        $imageSent = 'http://localhost:8000' . Storage::url($imagePath);
        
+
+
+        return response(['image_url' => $imageSent], 200);
+       
+    }
+
+    public function uploadProfileImage(Request $request){
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imagePath = $image->storeAs('profile_images', $imageName, 'public');
+
+            $user = Auth::user(); // Assuming you have authentication set up
+        $user->profileImg = $imagePath;
+        $user->save();
+
+        $imageUrl = Storage::url($user->profileImg);
+        
+        $imageSent = "http://localhost:8000" . $imageUrl;
+        $user->profileImg = $imageSent;
+        $user->save();
+            return response(['image_path' => $imageSent], 200);
+        } else {
+            return response(['message' => 'Image not found.'], 400);
+        }
     }
 }
 

@@ -23,7 +23,7 @@ export const Nav = () => {
               <a href="/upload">
                 <div className='upload_vid'>
                     <BiPlus style={{fontWeight:"bolder"}}/>
-                    uploads
+                    Create Post
                  </div>
                  </a>
                <div className="tiktokProfile" >

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Headers from '../Components/Headers/Headers'
  import "../css_loaders/styles.css"
 import { Homesection } from '../Components/HomePage/Homesection'
  import { FlashDeals } from '../Components/sectionpage/FlashSlider';
 import FlashCard from '../Components/sectionpage/Category';
 import { Footer } from '../Components/footer/Footer';
+import { Navigate, Outlet } from 'react-router-dom';
+import { AppContext } from '../main';
   export const Layout = () => {
     
   return (
@@ -29,3 +31,18 @@ import { Footer } from '../Components/footer/Footer';
     </>
   )
 }
+ export const ProtectedLayout = ()=>{
+
+  const {appState} = useContext(AppContext)
+
+  if(appState.user){
+    return (
+      <Outlet/>
+    )
+  }
+
+  return <Navigate to='/login' />
+
+
+}
+

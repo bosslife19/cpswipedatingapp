@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosClient from '../../axiosClient';
+import { AppContext } from '../../main';
 
 const Login = () => {
   // State variables to store user inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('')
+
+  const {appState, setAppState} = useContext(AppContext)
+
+  
 
   const navigate = useNavigate()
 
@@ -23,14 +30,27 @@ const Login = () => {
   // Event handler for form submission
   const handleSubmit =async (event) => {
     event.preventDefault();
+    setError("");
+    setLoading(true);
    try {
     const res = await axiosClient.post('/login', {email, password});
+   
     localStorage.setItem("ACCESS_TOKEN", res.data.token)
+    localStorage.setItem('user', JSON.stringify(res.data.user));
+    setAppState({...appState, user: res.data.user})
+
+    setLoading(false)
+    
+    
+
+
 
     navigate('/admin')
     
    } catch (error) {
     console.log(error)
+    setLoading(false)
+    setError(error.response?.data)
    }
     
   };
@@ -70,7 +90,8 @@ const Login = () => {
           />
         </div>
         {/* <Link to="/admin"> */}
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>Login</button>
+        {error && <p style={{color:'red'}}>{error}</p>}
         {/* </Link> */}
       </form>
       <div className="signupbar">

@@ -12,6 +12,8 @@ const SignUp = ({ backgroundImage }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('')
 
   const navigate = useNavigate()
   const handleGenderChange = (event) => {
@@ -48,6 +50,8 @@ const SignUp = ({ backgroundImage }) => {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
+    setError('')
+    setLoading(true)
     // Handle sign-up logic here
     try {
       const res = await axiosClient.post("/register", {
@@ -64,6 +68,9 @@ const SignUp = ({ backgroundImage }) => {
       
     } catch (error) {
       console.log(error)
+      setError(error.response?.data);
+      setLoading(false)
+
     }
   };
 
@@ -160,8 +167,10 @@ const SignUp = ({ backgroundImage }) => {
             <button onClick={handleGetStartedClick}>Get started</button>
           ) : (
             // </Link>
-            <button type="submit">Sign up</button>
+            <button type="submit" disabled={loading}>Sign up</button>
+            
           )}
+           {error && <p style={{color:'red'}}>{error}</p>}
           <div className="already_login">
             <label style={{ fontWeight: "bold" }}>Already a member?</label>
             <Link to="/admin">Log in</Link>
