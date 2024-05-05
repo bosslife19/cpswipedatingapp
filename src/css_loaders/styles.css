@@ -734,8 +734,13 @@ list-style: none;
   padding: 50px;
   overflow-y: auto;
   height: 100vh;
-  scrollbar-width:none;
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE and Edge */
   scroll-behavior: smooth;
+}
+
+.Homepage_details::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .Homepage_lines {
