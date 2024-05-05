@@ -9,24 +9,8 @@ const UploadDetailsPage = () => {
   const [name, setName] = useState('');
   const [caption, setCaption] = useState('');
   const [scheduleDate, setScheduleDate] = useState('');
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ 
     
-    // Save uploaded content to local storage
-    const content = {
-      file: location.state.file,
-      name: name,
-      caption: caption,
-      scheduleDate: scheduleDate
-    };
-
-    localStorage.setItem('uploadedContent', JSON.stringify(content));
-
-    // Navigate back to homepage
-    navigate('/admin');
-  }; 
 
   return (
     <>
@@ -37,17 +21,8 @@ const UploadDetailsPage = () => {
       
       <div className="display_flex">
       
-      <form onSubmit={handleSubmit}>
+      <form >
       <h1>Upload Details</h1>
-        <div>
-           {/* <input disabled
-            // type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          /> */}
-        </div>
         <div>
           <label >Caption</label>
            <input
@@ -69,7 +44,7 @@ const UploadDetailsPage = () => {
         
         <button type="submit">Upload</button>
       </form>
-      <div className='file'>
+      <div className='files'>
          {location.state.file.type.startsWith('image/') ? (
           <img src={URL.createObjectURL(location.state.file)} alt="Uploaded Content" />
         ) : (

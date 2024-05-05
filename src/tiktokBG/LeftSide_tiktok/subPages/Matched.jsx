@@ -11,6 +11,7 @@ const MatchedPage = () => {
     { id: 1, name: 'John Doe', imageUrl: peopled, matchReason: 'Similar interests in hiking and photography' },
     { id: 2, name: 'Jane Smith', imageUrl: peoples, matchReason: 'Both love cooking and traveling' },
     { id: 3, name: 'Janes Smith', imageUrl: peoples, matchReason: 'Both love cooking and traveling' },
+   
     // Add more matched users as needed
     // Add more matched users as needed
   ];
