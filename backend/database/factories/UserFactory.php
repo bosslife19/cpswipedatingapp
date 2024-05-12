@@ -26,8 +26,10 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'username' => fake()->name(),
-            'type'=>'male|female',
-            'gender'=>'male|female',
+            'type'=>'female',
+            'gender'=>'male',
+            "subscription_amount"=>fake()->numberBetween(0,1000),
+            "subscription_payment_details"=>fake()->text(200),
             'age'=>fake()->numberBetween(18, 70),
             'profileImg'=> fake()->imageUrl(),
             // 'images'=>[fake()->imageUrl()],

@@ -35,13 +35,15 @@ import { AppContext } from '../main';
 
   const {appState} = useContext(AppContext)
 
-  if(appState.user){
+  if(!appState.user){
     return (
-      <Outlet/>
+      <Navigate to='/login' />
     )
   }
 
-  return <Navigate to='/login' />
+  else{
+    return <Outlet/>
+  }
 
 
 }

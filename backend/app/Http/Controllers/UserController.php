@@ -23,14 +23,65 @@ class UserController extends Controller
         return response($users, 200);
     }
 
+    public function requestSubscribe($id){
+       $validatedData = request()->validate(['username' =>"required|string"]);
+       $user = User::find($id);
+       $user->subscription_requests =array_unique(array_merge((array) $user->subscription_requests, [$validatedData['username']]));
+
+       $user->save();
+
+       return response($user,200);
+    }
+
     public function subscribe(Request $request){
-        $subscribingAccount = $request->id;
+        $subscribingAccount = $request->username;
         $user = Auth::user();
         $user->subscribed = array_unique(array_merge((array) $user->subscribed, [$subscribingAccount]));
+        $user->subscription_requests = array_diff( $user->subscription_requests, [$subscribingAccount]);
 
         $user->save();
 
         return response($user,200);
+    }
+
+    public function rejectSubscribe(Request $request){
+        $subscribingAccount = $request->username;
+        $user = Auth::user();
+
+        $user->subscription_requests = array_diff( $user->subscription_requests, [$subscribingAccount]);
+
+        $user->save();
+
+        return response($user,200);
+    }
+
+    public function updatePaymentDetails(Request $request)
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+
+            'subscriptionPrice'=>"required|integer",
+            'paymentDetails' => 'required|string',
+        ]);
+
+        // Update the user's payment details in the database
+        $user = Auth::user();
+        $user->subscription_amount = $validatedData['subscriptionPrice'];
+        $user->subscription_payment_details = $validatedData['paymentDetails'];
+        $user->save();
+
+        return response()->json(['message' => 'User payment details updated successfully']);
+    }
+
+    public function getPaymentDetails($id){
+        $user = User::find($id);
+
+        $price = $user->subscription_amount;
+        $paymentDetails= $user->subscription_payment_details;
+
+        return response(['price'=>$price, 'paymentDetails'=>$paymentDetails], 200);
+
+
     }
 
     public function getUser($id){
@@ -79,7 +130,7 @@ class UserController extends Controller
     {
         
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,mp4,mkv', // Adjust validation rules as needed
+            'image' => 'required|mimes:jpeg,png,jpg,gif,mp4,mkv', // Adjust validation rules as needed
         ]);
 
         $user = auth()->user(); // Assuming you have authentication set up

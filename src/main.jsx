@@ -106,7 +106,7 @@ const routes = [
         element: <SearchPage />,
       },
       {
-        path: "/peopleArea",
+        path: "/subscribed",
         element: <PeopleInYourAreaPage />,
       },
       {
@@ -123,7 +123,7 @@ const routes = [
       },
 
       {
-        path: "/admin/",
+        path: "/admin",
         element: <AllTiktok_Section />,
         children: [
          

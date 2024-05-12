@@ -23,7 +23,7 @@ const Appssss = () => {
     { title: "Dashboard", src: <FaHome/> ,link: "/admin"},
     { title: "potential matches", src: <IoPersonAddSharp />,link: "/potential" },
     { title: "search", src: <GrUserManager/>, gap: true ,link: "/searchingleft"},
-    { title: "People in Your Area ", src: <SiHomeassistantcommunitystore/> ,link: "/peopleArea"},
+    { title: "Subscribed ", src: <SiHomeassistantcommunitystore/> ,link: "/subscribed"},
     { title: "Matched", src: <MdOutlineConnectWithoutContact />,link: "/matched"},
     { title: "Single Women", src:<MdGirl/> ,link: "/singleladies"},
     { title: " Single Men ", src:<GrUserManager />, gap: true ,link: "/singleMen"},

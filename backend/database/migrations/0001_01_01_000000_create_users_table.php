@@ -21,9 +21,12 @@ return new class extends Migration
             $table->json('images')->nullable();
             $table->string('name')->nullable();
             $table->json("subscribed")->nullable();
+            $table->json("subscription_requests")->nullable();
             $table->integer('age')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer("subscription_amount")->nullable();
+            $table->string('subscription_payment_details')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

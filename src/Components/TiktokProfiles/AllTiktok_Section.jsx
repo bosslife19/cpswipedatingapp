@@ -13,7 +13,8 @@ export const AllTiktok_Section = () => {
 
 
   const { appState, setAppState } = useContext(AppContext);
-  const user = JSON.parse(appState.user);
+  const currentUser = localStorage.getItem("user");
+  const user = JSON.parse(currentUser);
 
   const getAll = async () => {
 
@@ -30,6 +31,7 @@ export const AllTiktok_Section = () => {
     
   };
   useEffect(() => {
+    
     getAll();
   }, []);
 

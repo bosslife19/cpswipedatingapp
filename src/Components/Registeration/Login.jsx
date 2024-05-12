@@ -91,7 +91,7 @@ const Login = () => {
         </div>
         {/* <Link to="/admin"> */}
         <button type="submit" disabled={loading}>Login</button>
-        {error && <p style={{color:'red'}}>{error}</p>}
+        {/* {error && <p style={{color:'red'}}>{error}</p>} */}
         {/* </Link> */}
       </form>
       <div className="signupbar">

@@ -1,0 +1,59 @@
+.request-modal{
+    position:fixed;
+    /* right:30%; */
+    top: 0;
+    margin-top:150px;
+    background-color: white;
+    width: 500px;
+    height:300px;
+    padding:10px 5px;
+    z-index: 1500;
+}
+.backg{
+    position:fixed;
+    top:0;
+    right:-15%;
+    background-color: rgb(199, 189, 189);
+    width: 100vw;
+    height: 100%;
+    opacity: 0.5;
+}
+.request-modal h3{
+    font-size: 14px;
+    text-align: center;
+}
+.requests{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-top: 10px;
+}
+.request{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    background-color: rgb(241, 234, 234);
+    border-radius: 10px;
+    padding:10px 30px;
+    
+
+    width:fit-content;
+    margin:auto;
+    
+    
+
+}
+.request .accept{
+background-color: rgba(255, 0, 0, 0.88);
+color:white;
+padding:5px 10px;
+border-radius: 3px;
+}
+
+.request .reject{
+    background-color: rgb(3, 82, 3);
+color:white;
+padding:5px 10px;
+border-radius: 3px;
+}

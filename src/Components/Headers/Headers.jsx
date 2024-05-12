@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Headers = () => {
 
   const navigationArray = [
-    { title: "Login", link: "/admin" },
+    { title: "Login", link: "/login" },
 
   ]
   // const [isScrolled, setIsScrolled] = useState(false);

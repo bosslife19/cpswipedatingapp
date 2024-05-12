@@ -77,26 +77,29 @@ export const Profilehome = () => {
                   </div>
                   <div className="profile_details_show">
                     <h2>{profileDetails.name}</h2>
-                    <p>{profileDetails.bio}</p>
-                    <button>follow</button>
+                    {/* <p>{profileDetails.bio}</p> */}
+                    {/* <button>follow</button> */}
                   </div>
 
                   {/* Add more profile details here */}
                 </div>
-                <div className="caption_details">
+                {/* <div className="caption_details">
                   <p>Girl Boss drip drop </p>
-                </div>
+                </div> */}
                 <div className="profile_scrolls">
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
-                  <img src={profileDetails.img} alt="" />
+                {user?.images?.map((item, index) => {
+                    const extension = item.split('.').pop().toLowerCase();
+                    if (extension === 'jpg' || extension === 'jpeg' || extension === 'png') {
+                      return <img key={index} src={item} alt={item.alt} />;
+                    } else if (extension === 'mp4' || extension === 'webm' || extension === 'mkv') {
+                      return (
+                        <video key={index} controls autoPlay>
+                          <source src={item} type={`video/${extension}`} />
+                          Your browser does not support the video tag.
+                        </video>
+                      );
+                    } 
+                  })}
                 </div>
               </div>
             </div>

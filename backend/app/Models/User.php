@@ -39,6 +39,8 @@ class User extends Authenticatable
         'images'=>'array',
         "password" =>'hashed',
         'subscribed' => 'array',
+        'subscription_requests' => 'array',
+        
          // Cast the 'subscribed' field to an array
     ];
 }

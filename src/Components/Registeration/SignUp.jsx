@@ -44,7 +44,8 @@ const SignUp = ({ backgroundImage }) => {
     setPassword(event.target.value);
   };
 
-  const handleGetStartedClick = () => {
+  const handleGetStartedClick = (e) => {
+    e.preventDefault()
     setShowFullForm(true);
   };
 
@@ -82,7 +83,7 @@ const SignUp = ({ backgroundImage }) => {
         </Link>
       </div>
       <div className="signup_container">
-        <form className="signup-form" onSubmit={handleSignUp}>
+        <form className="signup-form">
           <h1>Sign up now for free and share your passion</h1>
           <div className="formSpace">
             <div className="form-group">
@@ -167,7 +168,7 @@ const SignUp = ({ backgroundImage }) => {
             <button onClick={handleGetStartedClick}>Get started</button>
           ) : (
             // </Link>
-            <button type="submit" disabled={loading}>Sign up</button>
+            <button type="submit" disabled={loading} onClick={handleSignUp}>Sign up</button>
             
           )}
            {error && <p style={{color:'red'}}>{error}</p>}
