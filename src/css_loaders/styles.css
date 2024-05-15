@@ -1,0 +1,217 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+   /* width: 100%; */
+   /* height: 100vh; */
+  }
+
+  a{
+    list-style: none;
+    text-decoration: none;
+  }
+  .contains{
+    background-image: url('../assets/phone.avif');
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+     color: white;
+    z-index: 999; 
+  }
+ /* Styles for the normal state */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+     z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .scrolled {
+    /* Change button color and text clor when scrolled */
+     color: #fff;
+    backdrop-filter: blur(10px);
+  background-color: #525252;
+  transition: ease-in-out 0.5s;
+
+  }
+  
+  /* Styles for the scrolled state */
+  header.scrolled {
+    transition: ease-in-out 0.5s;
+    backdrop-filter: blur(10px);
+    background-color: white; /* Change background color when scrolled */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow when scrolled */
+  }
+  
+  .header_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px  100px;
+  }
+.header_container a{
+    font-weight: bold;
+    font-size: 40px;
+    color: #fff;
+    
+}
+  
+  .logo {
+    display: block;
+    font-size: 24px;
+  }
+  .system_text{
+    color: #333;
+  }
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    text-decoration: none;
+list-style: none;
+  }
+  
+  nav ul a li {
+    margin-right: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
+  }
+ 
+.logins button{
+    padding: 17px 50px;
+    outline: none;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    transition: 0.5s;
+}
+.logins button:focus{
+     outline: none;
+}
+.logins button:hover{
+   background: rgb(182, 124, 168);
+    outline: none;
+    border: none;
+    color: #fff;
+}
+  /* banner */
+  .banner {
+    width: 100%;
+    height: 100%;
+    
+  }
+  .banner_container{
+    width:100%;
+    padding: 150px 50px;
+  }
+  .left {
+    width: 50%;
+    padding: 20px;
+  }
+  
+  .signup-form {
+    width: 410px;
+    background-color:#f4f5f6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 6px 9px 2px rgba(194, 186, 186, 0.404);
+  }
+ 
+  .signup-form h1{
+    font-size: 30px;
+    text-align: center;
+    color: #525252;
+    margin-bottom: 25px;
+  }
+  .form-group {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+     padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  label {
+     margin-bottom: 5px;
+     font-size: 17px;
+     color: #525252;
+     font-weight: bold;
+  }
+  .formSpace{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+  }
+  input[type="text"],
+  select {
+    width: 200px;
+    padding: 13px;
+    border: 1px solid rgb(182, 124, 168);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .sectionOpt{
+    display: flex;
+    flex-direction: column-reverse;
+    /* gap: 10px; */
+  }
+  input[type="range"] {
+    width: 200px;
+   }
+  
+  output {
+    display: block;
+    margin-top: 5px;
+    color: #525252;
+    font-weight: bold;
+  }
+  
+  button[type="submit"] {
+    padding: 15px 25px;
+    background: rgb(182, 124, 168);
+    color: #fff;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .already_login{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+  }
+  .already_login a{
+    color: rgb(182, 124, 168);
+    font-weight: bold;
+  }
+
+  /* loading preloader */
+  .preloader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .spinner {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #007bff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
