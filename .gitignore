@@ -8,6 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+/backend/vendor
+/src/assets/sleeping.mp4
+/src/assets/sleeping (3).mp4
+
 dist
 dist-ssr
 *.local

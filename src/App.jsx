@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import './App.css';
- import Preloader from './Loading/Loading';
+//  import Preloader from './Loading/Loading';
 import { Pages } from './Page/Pages';
+import Preloader from './Loading/Loading';
  
 function App() {
   const [isLoading, setIsLoading] = useState(true);

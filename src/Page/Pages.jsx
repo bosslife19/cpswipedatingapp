@@ -1,11 +1,10 @@
-import React from 'react'
- import { Layout } from '../Layout/Layout'
-import { Homesection } from '../Components/HomePage/Homesection'
+import { Layout } from "../Layout/Layout"
 
+  
 export const Pages = () => {
   return (
     <div>
         <Layout/>
      </div>
   )
-}
+} 

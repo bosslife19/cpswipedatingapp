@@ -25,9 +25,19 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'username' => fake()->name(),
+            'type'=>'female',
+            'gender'=>'male',
+            "subscription_amount"=>fake()->numberBetween(0,1000),
+            "subscription_payment_details"=>fake()->text(200),
+            'age'=>fake()->numberBetween(18, 70),
+            'profileImg'=> fake()->imageUrl(),
+            // 'images'=>[fake()->imageUrl()],
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+
             'password' => static::$password ??= Hash::make('password'),
+          
             'remember_token' => Str::random(10),
         ];
     }

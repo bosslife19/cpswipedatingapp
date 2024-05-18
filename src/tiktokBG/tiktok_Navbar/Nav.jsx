@@ -1,0 +1,58 @@
+import React, { useState } from 'react'
+import { IoIosSearch } from 'react-icons/io'
+import logoImg from "../../assets/pack.jpg"
+import { BiPlus } from 'react-icons/bi'
+import { Link, useNavigate } from 'react-router-dom'
+import axiosClient from '../../axiosClient'
+export const Nav = () => {
+//  const currentUser = JSON.parse(localStorage.getItem('user'));
+
+//  const navigation = useNavigate()
+//  const handleLogout = async()=>{
+//   const res = await axiosClient.post('/logout');
+//   localStorage.removeItem('user');
+//   localStorage.removeItem("ACCESS_TOKEN");
+
+//   navigation('/');
+
+//  }
+ 
+  
+  return (
+    <>
+       <div className="tiktokHeader">
+        <div className="tiktok_container">
+            <Link to="/" >
+            <img src="https://cpswipe.com/themes/love/assets/img/logo.png" alt="" />
+            </Link>
+            <div className="searchform">
+                <div className="icons">
+                <IoIosSearch />
+                </div>
+                <input type="search" placeholder='Search'/>
+            </div>
+            <div className="Uploads_logins">
+              <button
+              className="logout"
+              //  onClick={handleLogout} 
+                >Log Out</button>
+              <a href="/upload">
+                <div className='upload_vid'>
+                    <BiPlus style={{fontWeight:"bolder"}}/>
+                    Create Post
+                 </div>
+                 </a>
+               <div className="tiktokProfile" >
+             <Link to="/profile">
+             <img 
+               src={logoImg}
+            //  src={currentUser.profileImg}
+              alt="" />
+             </Link>
+            </div>
+             </div>
+        </div>
+        </div> 
+    </>
+  )
+}
