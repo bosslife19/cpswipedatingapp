@@ -15,7 +15,7 @@ import { FaHome } from "react-icons/fa";
 import { IoPersonAddSharp } from "react-icons/io5";
 import { GrUserManager } from "react-icons/gr";
 import { SiHomeassistantcommunitystore } from "react-icons/si";
-import { MdGirl, MdOutlineConnectWithoutContact } from "react-icons/md";
+import { MdGirl } from "react-icons/md";
  
 const Appssss = () => {
   const [open, setOpen] = useState(true);
@@ -24,7 +24,7 @@ const Appssss = () => {
     { title: "potential matches", src: <IoPersonAddSharp />,link: "/potential" },
     { title: "search", src: <GrUserManager/>, gap: true ,link: "/searchingleft"},
     { title: "Subscribed ", src: <SiHomeassistantcommunitystore/> ,link: "/subscribed"},
-    { title: "Matched", src: <MdOutlineConnectWithoutContact />,link: "/matched"},
+    // { title: "Matched", src: <MdOutlineConnectWithoutContact />,link: "/matched"},
     { title: "Single Women", src:<MdGirl/> ,link: "/singleladies"},
     { title: " Single Men ", src:<GrUserManager />, gap: true ,link: "/singleMen"},
    ];

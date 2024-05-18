@@ -1,6 +1,6 @@
 // Import necessary modules
 import  { createContext,
-  //  useState 
+   useState 
   } from 'react';
 import ReactDOM from 'react-dom';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -13,36 +13,36 @@ import UploadPage from './tiktokBG/Tiktok_Homepage/subPages/UploadPage';
 import SearchPage from './tiktokBG/LeftSide_tiktok/subPages/Searchpage.jsx';
 import PeopleInYourAreaPage from './tiktokBG/LeftSide_tiktok/subPages/peopleInYourare';
 import PotentialMatchesPage from './tiktokBG/LeftSide_tiktok/subPages/Potential';
-import MatchedPage from './tiktokBG/LeftSide_tiktok/subPages/Matched.jsx';
+// import MatchedPage from './tiktokBG/LeftSide_tiktok/subPages/Matched.jsx';
 import SingleWomenPage from './tiktokBG/LeftSide_tiktok/subPages/Singlewomen.jsx';
 import SingleMenPage from './tiktokBG/LeftSide_tiktok/subPages/men.jsx';
  import SignUp from './Components/Registeration/SignUp.jsx';
  import Appssss from './tiktokBG/Tiktok_Homepage/SideberItems.jsx';
 import UploadDetailsPage from './tiktokBG/Tiktok_Homepage/subPages/UploadDetailsPage.jsx';
 import { Profilehome } from './tiktokBG/Tiktok_Homepage/ProfilePhoto';
-// import {ProtectedLayout} from './Layout/Layout.jsx'
+import {ProtectedLayout} from './Layout/Layout.jsx'
  
 
 export const AppContext = createContext();
 
-// const AppProvider = (
-  // {children}
-// )=>{
-//   const [appState, setAppState] = useState({
-//     user:localStorage.getItem('user'),
-//     token:localStorage.getItem('ACCESS_TOKEN'),
-//     users: [],
-//     uploads: [],
+const AppProvider = (
+  {children}
+)=>{
+  const [appState, setAppState] = useState({
+    user:localStorage.getItem('user'),
+    token:localStorage.getItem('ACCESS_TOKEN'),
+    users: [],
+    uploads: [],
 
-//   })
-//   return (
-//     <AppContext.Provider value ={{appState, setAppState,}}>
-//         {
-//           children
-//         }
-//     </AppContext.Provider>
-//   )
-// }
+  })
+  return (
+    <AppContext.Provider value ={{appState, setAppState,}}>
+        {
+          children
+        }
+    </AppContext.Provider>
+  )
+}
 // Define the layout component
 const Layout = () => {
   return (
@@ -80,13 +80,13 @@ const routes = [
         element: <SignUp />,
       },
       
-    // ],
-  // },
+    ],
+  },
 
-  // {
-  //   path:'/',
-  //   element:<ProtectedLayout/>,
-  //   children: [
+  {
+    path:'/',
+    element:<ProtectedLayout/>,
+    children: [
       {
         path: "/profile",
         element: <ProfilePage />,
@@ -115,10 +115,7 @@ const routes = [
         path: "/subscribed",
         element: <PeopleInYourAreaPage />,
       },
-      {
-        path: "/matched",
-        element: <MatchedPage />,
-      },
+      
       {
         path: "/singleladies",
         element: <SingleWomenPage />,
@@ -149,8 +146,8 @@ const router = createBrowserRouter(routes);
 
 // Render the application
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <AppProvider>
+  <AppProvider>
  <RouterProvider router={router} />
-  // </AppProvider>
+   </AppProvider>
  
 );

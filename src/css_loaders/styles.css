@@ -1240,7 +1240,7 @@ flex-direction: column;
 }
 .Homepage_details {
   width: 100%;
-  background: #000;
+  /* background: #000; */
   /* padding: 50px; */
   overflow-y: auto;
   position: relative;
@@ -1749,6 +1749,7 @@ object-fit: cover;
  .potential_contains{
   display: flex;
   justify-content: start;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   padding: 40px;
@@ -1764,8 +1765,8 @@ object-fit: cover;
   grid-template-columns: repeat(5,1fr); */
  }
  .match img{
-  max-width: 300px;
-  height: 400px;
+  max-width: 320px;
+  height: 200px;
   object-fit: cover;
     /* border-radius: 10px; */
     border-top-left-radius: 15px;
@@ -1902,6 +1903,7 @@ object-fit: cover;
 }
 .people-grid{
   display: flex;
+  flex-direction: column;
   /* justify-content: center; */
   align-items: center;
   flex-wrap: wrap;
@@ -1916,8 +1918,8 @@ object-fit: cover;
   padding-bottom: 20px;
 }
 .person-card a img{
-  max-width: 240px;
-  height: 280px;
+  max-width: 320px;
+  height: 200px;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -1958,6 +1960,7 @@ object-fit: cover;
 .matched-users{
   display: flex;
   justify-content: start;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
@@ -1981,13 +1984,14 @@ object-fit: cover;
  border-top-right-radius: 10px;
 }
 .user-card h3{
+  text-transform: capitalize;
   padding:0 10px;
   font: normal normal normal 500 26px/20px "Montserrat",sans-serif;
 
 }
 .user-card p{
    padding:0 10px;
-  font: normal normal  500 20px/20px "Montserrat",sans-serif;
+  font: normal normal  500 16px/20px "Montserrat",sans-serif;
   color: #433E42;
  }
 .action-buttons{
@@ -2000,7 +2004,7 @@ object-fit: cover;
 }
 .action-buttons button{
   padding: 13px;
-  font: normal normal normal 500 16px/10px "Montserrat",sans-serif;
+  font: normal normal normal 500 15px/10px "Montserrat",sans-serif;
   background: green;
   border: none;
    color: #fff;
@@ -2044,6 +2048,7 @@ color: #fff;
 .profiles_ladies{
   display: flex;
   justify-content: start;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   gap: 25px;
@@ -2054,7 +2059,7 @@ color: #fff;
 }
 
 .profile-card{
-  width: 250px;
+  /* width: 250px; */
   /* padding: 20px 20px 50px 20px;  */
   background: #eeebeb;
   border-radius: 10px;
@@ -2063,8 +2068,8 @@ color: #fff;
 }
 
 .profile-card img {
-  width: 100%;
-  height: 370px;
+  max-width: 320px;
+  height: 200px;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -2091,7 +2096,8 @@ margin: 0 5px;
 }
 .single-men-page h1{
   text-align: center;
-  padding-bottom: 14px;
+  font: normal normal normal 500 36px/60px "Montserrat",sans-serif;
+  /* padding-bottom: 14px; */
 }
 .profilemen{
   display: flex;
@@ -2480,15 +2486,7 @@ border-radius: 50%;
           background: #e5e5e5;
           padding-bottom: 20px;
         }
-        .person-card a img{
-          max-width: 230px;
-          height: 280px;
-          object-fit: cover;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px;
         
-            flex-wrap: wrap;
-        }
         .captions{
           display: flex;
           justify-content: center;
@@ -2527,7 +2525,7 @@ border-radius: 50%;
 }
 
 .profile-card{
-  width: 250px;
+  /* width: 250px; */
   /* padding: 20px 20px 50px 20px;  */
   background: #eeebeb;
   border-radius: 10px;
@@ -2684,8 +2682,8 @@ margin: 0 5px;
  }
 
  .match img{
-  max-width: 260px;
-  height: 280px;
+  /* max-width: 260px;
+  height: 280px; */
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -2705,15 +2703,7 @@ margin: 0 5px;
   background: #e5e5e5;
   padding-bottom: 20px;
 }
-.person-card a img{
-  max-width: 200px;
-  height: 250px;
-  object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-
-    flex-wrap: wrap;
-}
+ 
 .captions{
   display: flex;
   justify-content: center;
@@ -5126,8 +5116,8 @@ label {
   padding-bottom: 20px;
 }
 .person-card a img{
-  max-width: 100%;
-  height: 124px;
+  max-width: 200px;
+  height: 234px;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -7049,7 +7039,7 @@ align-items: center;
   }
   
   .profile-card{
-    width: 150px;
+    /* width: 150px; */
     /* padding: 20px 20px 50px 20px;  */
     background: #eeebeb;
     border-radius: 10px;
@@ -7336,6 +7326,11 @@ align-items: center;
     font: normal normal normal 8px/7.9px "Montserrat",sans-serif;
     transition: 0.5s ease;
    }    
+   .single-men-page h1{
+    text-align: center;
+    font: normal normal normal 500 26px/60px "Montserrat",sans-serif;
+    /* padding-bottom: 14px; */
+  }
 }
 
 
@@ -7460,6 +7455,15 @@ align-items: center;
     margin-bottom: 10px;
     transition: 0.5s ease;
   }
+  .person-card a img{
+    max-width: 155px;
+    height: 204px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  
+      flex-wrap: wrap;
+  }
 }
 
 
@@ -7583,7 +7587,41 @@ align-items: center;
   }
   .captions p{
      font: normal normal 500 8px/17px "Montserrat",sans-serif;
-  }     
+  }    
+  
+.profile-card{
+  width: 130px;
+  /* padding: 20px 20px 50px 20px;  */
+  background: #eeebeb;
+  border-radius: 10px;
+  box-shadow: none;
+ padding-bottom: 30px; 
+}
+
+.profile-card img {
+  width: 131px;
+  height: 170px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+} 
+.user-card{
+  width: 130px;
+   height: 240px;
+  background: #eeebeb;
+    border-radius: 10px;
+   display: flex;
+   justify-content: space-between;
+    flex-direction: column;
+  box-shadow: none;
+}
+.user-card a img{
+  width: 130px;
+ height: 160px;
+ object-fit: cover;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+}
 }
 
 
@@ -7655,7 +7693,14 @@ align-items: center;
       padding: 3px 4px;
       font-size: 3px;
        border-radius: 3px;
-   }       
+   }    
+   .single-women-page h1{
+    padding-bottom: 14px;
+    text-align: center;
+    color: #6f1273;
+    font: normal normal normal 500 16px/20px "Montserrat",sans-serif;
+    /* font-size: 50px; */
+  }   
 }
 
 @media(max-width:261px) {

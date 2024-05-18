@@ -1,12 +1,12 @@
-// import { useContext } from 'react'
+import { useContext } from 'react'
 import Headers from '../Components/Headers/Headers'
  import "../css_loaders/styles.css"
 import { Homesection } from '../Components/HomePage/Homesection'
  import { FlashDeals } from '../Components/sectionpage/FlashSlider';
 import FlashCard from '../Components/sectionpage/Category';
 import { Footer } from '../Components/footer/Footer';
-// import { Navigate, Outlet } from 'react-router-dom';
-// import { AppContext } from '../main';
+import { Navigate, Outlet } from 'react-router-dom';
+import { AppContext } from '../main';
 import CircleEffectBanner from '../Components/sections';
 import Secbanner from '../Components/sectionpage/secbanner';
 import RowBanner from '../Components/sectionpage/RowBanner';
@@ -48,19 +48,19 @@ import RowBanner from '../Components/sectionpage/RowBanner';
     </>
   )
 }
-//  export const ProtectedLayout = ()=>{
+ export const ProtectedLayout = ()=>{
 
-//   const {appState} = useContext(AppContext)
+  const {appState} = useContext(AppContext)
 
-//   if(!appState.user){
-//     return (
-//       <Navigate to='/login' />
-//     )
-//   }
+  if(!appState.user){
+    return (
+      <Navigate to='/login' />
+    )
+  }
 
-//   else{
-//     return <Outlet/>
-//   }
+  else{
+    return <Outlet/>
+  }
 
 
-// }
+}

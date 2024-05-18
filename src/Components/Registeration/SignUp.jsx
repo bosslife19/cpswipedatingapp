@@ -1,6 +1,8 @@
 import   { useState } from "react";
-import { Link } from "react-router-dom";
- import SubHeaders from "../Subheader/SubHeader";
+import { Link, useNavigate } from "react-router-dom";
+import axiosClient from "../../axiosClient";
+
+import SubHeaders from "../Subheader/SubHeader";
   
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -9,53 +11,59 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('')
+
+  const navigate = useNavigate()
  
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handlelastNameChange = (event) => {
+    setLastName(event.target.value);
   };
 
-  const isFormValid =
-    firstName.trim() &&
-    lastName.trim() &&
-    username.trim() &&
-    (email.trim() && validateEmail(email)) &&
-    password.length >= 6 &&
-    password === confirmPassword;
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-    switch (name) {
-      case "firstName":
-        setFirstName(value);
-        break;
-      case "lastName":
-        setLastName(value);
-        break;
-      case "username":
-        setUsername(value);
-        break;
-      case "email":
-        setEmail(value);
-        break;
-      case "password":
-        setPassword(value);
-        break;
-      case "confirmPassword":
-        setConfirmPassword(value);
-        break;
-      default:
-        break;
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleConfirmPasswordChange = (event) => {
+    setConfirmPassword(event.target.value);
+  };
+
+  const handleSignUp = async (event) => {
+    event.preventDefault();
+    setError('')
+    setLoading(true)
+    // Handle sign-up logic here
+    try {
+      const res = await axiosClient.post("/register", {
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword,
+        username,
+      });
+
+      navigate('/login')
+      
+    } catch (error) {
+      console.log(error)
+      setError(error.response?.data);
+      setLoading(false)
+
     }
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
-
- 
 
   return (
    <>
@@ -64,7 +72,7 @@ const SignUp = () => {
    </div>
     <section className="signup_Page">
       <div className="register_container">
-        <form onSubmit={handleSubmit}>
+        <form  >
           <div className="form_head">
             <h2>Get started,</h2>
             <p>Sign up to get started finding your partner!</p>
@@ -76,7 +84,7 @@ const SignUp = () => {
                 type="text"
                 name="firstName"
                 value={firstName}
-                onChange={handleInputChange}
+                onChange={handleFirstNameChange}
               />
             </div>
             <div className="df">
@@ -85,7 +93,7 @@ const SignUp = () => {
                 type="text"
                 name="lastName"
                 value={lastName}
-                onChange={handleInputChange}
+                onChange={handlelastNameChange}
               />
             </div>
           </div>
@@ -96,7 +104,7 @@ const SignUp = () => {
                 type="text"
                 name="username"
                 value={username}
-                onChange={handleInputChange}
+                onChange={handleUsernameChange}
               />
             </div>
             <div className="df">
@@ -105,9 +113,8 @@ const SignUp = () => {
                 type="text"
                 name="email"
                 value={email}
-                onChange={handleInputChange}
-                className={(email.trim() && !validateEmail(email)) ? "invalid" : ""}
-              />
+                onChange={handleEmailChange}
+               />
             </div>
           </div>
           <div className="register_btw">
@@ -118,9 +125,8 @@ const SignUp = () => {
                  type= "password"
                    name="password"
                   value={password}
-                  onChange={handleInputChange}
-                  className={password.length >= 6 ? "" : "invalid"}
-                />
+                  onChange={handlePasswordChange}
+                 />
               </div>
             </div>
             <div className="df">
@@ -130,7 +136,7 @@ const SignUp = () => {
                   type= "password"
                   name="confirmPassword"
                   value={confirmPassword}
-                  onChange={handleInputChange}
+                  onChange={handleConfirmPasswordChange}
                   className={password === confirmPassword ? "" : "invalid"}
                 />
               </div>
@@ -141,14 +147,8 @@ const SignUp = () => {
             <span style={{ fontWeight: "bold" }}>By creating your account, you agree to our Terms  Already a member? <Link to="/admin">login</Link></span>
           </div>
           <div className="Register_btns">
-            <Link to="/">
-              <button
-                type="submit"
-                className={`register_button ${isFormValid ? "" : "disabled"}`}
-                disabled={!isFormValid}
-              >
-                Register
-              </button>
+            <Link to="/admin">
+            <button type="submit" disabled={loading} onClick={handleSignUp}>Sign up</button>
             </Link>
           </div>
         </form>

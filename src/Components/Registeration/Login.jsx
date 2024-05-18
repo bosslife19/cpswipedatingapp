@@ -1,30 +1,58 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import SubHeaders from "../Subheader/SubHeader";
-import GoogleIcon from "../GoogleIcon";
-import Facebookicon from "../Facebookicon";
-import Twitter from "../Twiteer";
+ import SubHeaders from "../Subheader/SubHeader";
+import React, { useContext, useState } from 'react';
+// import { FaArrowLeftLong } from 'react-icons/fa6';
+import { Link, useNavigate } from 'react-router-dom';
+import axiosClient from '../../axiosClient';
+import { AppContext } from '../../main';
 
 const SignUp = () => {
-  const [userData, setUserData] = useState({ username: "", email: "", password: "" });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('')
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+  const {appState, setAppState} = useContext(AppContext)
 
   
-    (userData.email.trim() && validateEmail(userData.email)) &&
-    userData.password.length >= 6;
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({ ...userData, [name]: value });
+  const navigate = useNavigate()
+
+  // Event handler for input changes
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    if (name === 'email') {
+      setEmail(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted");
+  // Event handler for form submission
+  const handleSubmit =async (event) => {
+    event.preventDefault();
+    setError("");
+    setLoading(true);
+   try {
+    const res = await axiosClient.post('/login', {email, password});
+   
+    localStorage.setItem("ACCESS_TOKEN", res.data.token)
+    localStorage.setItem('user', JSON.stringify(res.data.user));
+    setAppState({...appState, user: res.data.user})
+
+    setLoading(false)
+    
+    
+
+
+
+    navigate('/admin')
+    
+   } catch (error) {
+    console.log(error)
+    setLoading(false)
+    setError(error.response?.data)
+   }
+    
   };
 
   return (
@@ -44,10 +72,12 @@ const SignUp = () => {
               <div className="df">
                 <label>Username or Email</label>
                 <input
-                  type="text"
-                  name="username"
-                  value={userData.username}
-                  onChange={handleInputChange}
+                  type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleInputChange}
+            required
                 />
               </div>
             </div>
@@ -58,10 +88,11 @@ const SignUp = () => {
                 <div className="password-input">
                   <input
                     type="password"
-                    name="password"
-                    value={userData.password}
-                    onChange={handleInputChange}
-                    className={userData.password.length >= 6 ? "" : "invalid"}
+            id="password"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+            required
                   />
                 </div>
               </div>
@@ -70,29 +101,13 @@ const SignUp = () => {
            <div className="spacesEverywhere">
            <div className="Register_btns">
               <Link to="/admin">
-                <button
-                  type="submit"
-                  className="register_button "
-                  // disabled={!isFormValid}
-                >
-                  Login
-                </button>
+              <button type="submit" disabled={loading}>Login</button>
               </Link>
             </div>
             <div className="forgot">
               <span>forgot password</span>
             </div>
            </div>
-           <div className="others_links">
-           <Link to="/"><Facebookicon/>
-           <span>Login with Facebook</span>
-           </Link>
-           
-        <Link to="/"><Twitter/> <span>Login with Twitter</span></Link>
-        <Link ><GoogleIcon/> <span>Login with Google</span></Link>
-            <Link to="/"> <span>Login with Discord</span></Link>
-           </div>
-
           </form>
         </div>
       </section>
