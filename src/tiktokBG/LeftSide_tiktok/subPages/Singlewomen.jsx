@@ -1,7 +1,7 @@
 // SingleWomenPage.js
 import  { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
- 
+//  import peoples from "../../../assets/pack.jpg"
 import { Nav } from '../../tiktok_Navbar/Nav';
 import { Leftside } from '../Leftside';
 import { ThreeDots } from 'react-loader-spinner';
@@ -59,26 +59,51 @@ const SingleWomenPage = () => {
       <h1>Single Women</h1>
       <div className="profiles_ladies">
         {singleWomenProfiles.map(profile => (
-          <div 
-          key={profile.id}
-           className="profile-card">
+        <div className="" 
+        key={profile.id}
+        >
+        <div className="HomePage_Upper">
+                  <div className="tiktokProfile">
+                       <Link
+                       to={`/profile-page/${user.id}`
+                       }   
+                       >
+                        <img 
+                        // src={peoples}
+                        src={user.profileImg}
+                         alt="" />
+                      </Link>
+                    <div className="heads">
+                         <Link 
+                        to={`/profile-page/${user.id}`}
+                        >
+                          <h2>
+                           
+                          {profile.username}
+                          </h2>
+                        </Link>
+                     <p> 
+                      {profile.caption}
+                     </p>
+                    </div>
+                  </div>
+                  <div className="tiktok_mingle">
+                  <button disabled>Subscribed</button>
+                  </div>
+                </div>
+              <div  className="profile-card">
                <Link 
                to={`/profile-page/${profile.id}`}
                >
               <img 
-              // src={peopled}
+              // src={peoples}
               src={profile.profileImg} alt={profile.username}
                />
             </Link>
-            <h3>
-            {/* dldldm */}
-            {profile.username}
-            </h3>
-            <p>
-            {/* dldlllflfk */}
-            {profile.caption}
-            </p>
+            
           </div>
+                </div>
+      
          
         ))}
       </div>
